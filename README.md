@@ -1,1 +1,1 @@
-# [Wiki_ZXTres](https://github.com/zxtres/Wiki_ZXTres/wiki)
+# [wiki](https://github.com/zxtres/wiki/wiki)
