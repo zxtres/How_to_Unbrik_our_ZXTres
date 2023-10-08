@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Copyright (c) 2021-2023 ZXTRES.
+	
+    Free under the Creative Commons Attribution-NonCommercial 3.0 Unported (http://creativecommons.org/licenses/by-nc/3.0/es/)
+-->
+<html>
+
+<head>
+    <title>ZXTRES</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="/ms-icon-310x310.png">
+    <meta charset="utf-8" />
+
+    <style>
+        .button {
+            background-color: #eeeeee;
+            /* Green */
+            border: none;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: #cccccc;
+            /* Green */
+            color: black;
+        }
+
+        .button:active {
+            background-color: #777777;
+        }
+
+        .language {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 25px;
+            z-index: 901;
+            /* background: #fff; */
+        }
+
+        .copyright {
+            bottom: 0%;
+            width: 100%;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body style="margin:5%;height:50%;padding-top:5%;">
+    <div class="language">
+        <p style="margin-left: 80%;">
+            <a href="./index_en.html"><img src="./img/gb.png" alt="EN"></a>
+            <img src="./img/es.png" alt="ES">
+        </p>
+    </div>
+
+    <p style="text-align:center">
+        <img style="margin:5%;text-align:center;width: 60%" src="./img/logo.png" alt="ZXTRES" />
+    </p>
+
+    <h2 style="text-align:center">
+        Descripción
+    </h2>
+
+    <p style="text-align: justify">
+        ZXTRES, ZXTRES+ y ZXTRES++ son la continuación de <a href="https://zxuno.speccy.org">ZX-Uno</a> un proyecto de
+        hardware y software basado en una placa FPGA programada para trabajar como un ordenador ZX Spectrum. Con el paso
+        del tiempo, el proyecto ha ido creciendo, de forma que es posible usar distintas configuraciones de software
+        (cores) y que trabajan como otros sistemas distintos del ZX Spectrum, pudiendo elegir la configuración que se
+        desee de entre varias disponibles.
+    </p>
+
+    <p style="text-align: justify">Este nuevo
+        proyecto ofrece una salida de vídeo más moderna usando DisplayPort, VGA y audio analógico (selección entre I2S o
+        DAC Sigma-Delta) y está basado en la placa Xilinx Artix7 de QMTECH.
+    </p>
+
+    <h2 style="text-align:center">
+        Información y documentación
+    </h2>
+
+    <p style="text-align:center">
+        <button class="button" onclick="location.href='http://www.forofpga.es/viewforum.php?f=251'">Foro
+            Oficial</button>
+        <button class="button" onclick="location.href='https://github.com/zxtres/wiki/wiki'">Wiki</button>
+        <button class="button" onclick="location.href='./manual_es.html'">Manual de Uso</button>
+    </p>
+
+    <div class="copyright">
+        <p style="text-align:left; font-size:x-small">
+            &copy; 2023 <a href="https://github.com/zxtres">zxtres</a><br />
+            Iconos de banderas de: <a href="https://www.iconfinder.com/iconsets/stripe-flag-set">Iconfinder</a>
+        </p>
+    </div>
+</body>
+
+</html>
