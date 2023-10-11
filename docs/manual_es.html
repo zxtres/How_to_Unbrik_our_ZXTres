@@ -740,7 +740,7 @@ pre.rouge {
 <h1>Manual de ZXTRES, ZXTRES+ y ZXTRES++</h1>
 <div class="details">
 <span id="author" class="author">ES</span><br>
-<span id="email" class="email">2023-10-08</span><br>
+<span id="email" class="email">2023-10-11</span><br>
 <span id="revnumber">versión 1.0.0b</span>
 </div>
 <div id="toc" class="toc2">
@@ -1154,6 +1154,7 @@ pre.rouge {
 <li><a href="#_recuperación_del_firmware">Recuperación del firmware</a>
 <ul class="sectlevel3">
 <li><a href="#_preparación_del_cableado">Preparación del cableado</a></li>
+<li><a href="#_recuperación_usando_macos_o_linux_y_usb_blaster">Recuperación usando macOS o Linux y USB-Blaster</a></li>
 <li><a href="#_recuperación_usando_una_raspberry_pi">Recuperación usando una Raspberry Pi</a></li>
 </ul>
 </li>
@@ -7519,7 +7520,7 @@ CHROMA81: enabled</p>
 <div class="sect3">
 <h4 id="_recuperación_vía_usb">Recuperación vía USB</h4>
 <div class="paragraph">
-<p>En algunas situaciones puede ser necesario reinstalar el firmaware de arranque (bootstrap) de algún <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html%23rp2040-device">microcontrolador RP2040</a> de la tarjeta.</p>
+<p>En algunas situaciones puede ser necesario reinstalar el firmware de arranque (bootstrap) de algún <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html%23rp2040-device">microcontrolador RP2040</a> de la tarjeta.</p>
 </div>
 <div class="paragraph">
 <p><strong>Material necesario</strong>:</p>
@@ -8407,7 +8408,6 @@ Programador: "USBasp"</code></pre>
 </div>
 </div>
 <div style="page-break-after: always;"></div>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect2">
@@ -8421,10 +8421,13 @@ Programador: "USBasp"</code></pre>
 <div class="sect3">
 <h4 id="_preparación_del_cableado">Preparación del cableado</h4>
 <div class="paragraph">
-<p>En los siguientes pasos de recuperación se habla de conectar cables puente o USB-Blaster a la placa de ZXTRES. Para ello, usar la siguiente imagen como referencia.</p>
+<p>En los siguientes pasos se habla de conectar cables puente o USB-Blaster a la placa de ZXTRES. Para ello, usar las siguientes imágenes como referencia.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="img/jtagzxtres.jpg" alt="jtagzxtres"></span></p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/usbblasterzxtres.jpg" alt="usbblasterzxtres"></span></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -8435,6 +8438,234 @@ Programador: "USBasp"</code></pre>
 <td class="content">
 <div class="paragraph">
 <p><strong>NO</strong> se ha de conectar la línea de 3V</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect3">
+<h4 id="_recuperación_usando_macos_o_linux_y_usb_blaster">Recuperación usando macOS o Linux y USB-Blaster</h4>
+<div class="paragraph">
+<p><strong>Material necesario</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sistema Operativo Linux o macOS, en una máquina física o en una máquina virtual, con conexión USB y acceso a internet (únicamente para descargar el software)</p>
+</li>
+<li>
+<p>Adaptador USB-Blaster</p>
+</li>
+<li>
+<p>Tarjeta microSD para el ZXTRES con la primera partición en formato FAT16 o FAT32</p>
+</li>
+<li>
+<p>Teclado y monitor para conectar el ZXTRES</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Software necesario</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Imagen Flash y recovery para ZXTRES, del <a href="https://github.com/zxtres/cores/tree/main/recovery">repositorio oficial de Github</a>. Notar que existe una descarga distinta para cada tipo de dispositivo:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>recovery_a35.zip</code> para ZXTRES</p>
+</li>
+<li>
+<p><code>recovery_a100.zip</code> para ZXTRES+</p>
+</li>
+<li>
+<p><code>recovery_a200.zip</code> para ZXTRES++</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>En el caso de Linux, además, hace falta un fichero de reglas de udev <a href="https://github.com/trabucayre/openFPGALoader/blob/master/99-openfpgaloader.rules">disponible aquí</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Pasos a seguir</strong>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Instalar <a href="https://openocd.org">Open On-Chip Debugger (OpenOCD)</a> en el sistema usando el gestor de paquetes correspondiente. Por ejemplo, para Arch Linux:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">pacman <span class="nt">-S</span> openocd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para Debian Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">apt-get <span class="nb">install </span>openocd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para macOS (usando <a href="https://brew.sh">Homebrew</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">brew <span class="nb">install </span>open-ocd</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Sólo en el caso de Linux, añadir permisos a los usuarios para poder acceder al programador JTAG, para ello, ejecutar estos comandos para copiar el fichero de reglas y activarlo:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">groupadd plugdev
+<span class="nb">sudo cp </span>99-openfpgaloader.rules /etc/udev/rules.d/
+<span class="nb">sudo </span>udevadm control <span class="nt">--reload-rules</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>udevadm trigger
+usermod <span class="nt">-a</span> <span class="nv">$USER</span> <span class="nt">-G</span> plugdev</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Conectar el USB-Blaster al ordenador, y los cables correspondientes al ZXTRES <a href="#_preparación_del_cableado">tal y como se explica anteriormente</a>. Si ya estuviera conectado, desconectar y volver a conectar para asegurarse de que se activan las reglas de udev.</p>
+</li>
+<li>
+<p>Obtener el fichero <code>recovery.bit</code> del <a href="https://github.com/zxtres/cores/tree/main/recovery">repositorio principal de Github</a>. En nuestro ejemplo, se dejará en <code>/home/zxtres/unbrick/</code> (y en <code>/Users/zxtres/unbrick/</code> en el caso de macOS).</p>
+</li>
+<li>
+<p>Encender el ZXTRES.</p>
+</li>
+<li>
+<p>Asegurarse de que se está en el directorio donde se encuentra el archivo <code>recovery.bit</code>, y lanzar el comando que carga la BIOS en modo recuperación</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>En Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> /home/zxtres/unbrick
+<span class="nb">sudo </span>openocd <span class="nt">-f</span> /usr/share/openocd/scripts/interface/altera-usb-blaster.cfg <span class="nt">-f</span> /usr/share/openocd/scripts/cpld/xilinx-xc7.cfg <span class="nt">-c</span> <span class="s2">"init; pld load 0 recovery.bit;"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En macOS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> /Users/zxtres/unbrick
+openocd <span class="nt">-f</span> /opt/homebrew/share/openocd/scripts/interface/altera-usb-blaster.cfg <span class="nt">-f</span> /opt/homebrew/share/openocd/scripts/cpld/xilinx-xc7.cfg <span class="nt">-c</span> <span class="s2">"init; pld load 0 recovery.bit;"</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Recordar reemplazar en los comandos anteriores <code>recovery.bit</code> por el nombre del fichero adecuado para la placa a recuperar.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Si todo funciona correctamente, se verá cómo cambia el estado de los LED de la FPGA y se ve la imagen de la BIOS en el monitor.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>En el caso de que no se vea imagen, y si no se está utilizando DisplayPort, pulsar <code>Bloq. Despl.</code>: para cambiar entre modo de video compuesto y VGA, por si acaso la BIOS ha arrancado en un modo que no corresponde a la conexión del monitor.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/recovery.png" alt="recovery"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="8">
+<li>
+<p>Insertar en el ZXTRES la tarjeta microSD con la primera partición en formato FAT16 o FAT32, y en la que habremos copiado el fichero <code>FLASH.ZX3</code> descargado anteriormente.</p>
+</li>
+<li>
+<p>Desconectar el cable USB-Blaster.</p>
+</li>
+</ol>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="olist arabic">
+<ol class="arabic" start="10">
+<li>
+<p>Elegir la opción <code>Upgrade Flash from SD</code>. Pulsar Enter, elegir <code>Yes</code>, y pulsar Enter de nuevo para comenzar el proceso que graba de nuevo la Flash.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/recovery2.png" alt="recovery2"></span></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Este proceso sustituirá todos los cores instalados, la BIOS, así como las ROMs de ZX Spectrum y la configuración por lo que haya en la imagen, y no se puede deshacer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Recordar que también es posible navegar por las opciones de la BIOS utilizando un mando conectado en el puerto derecho.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="11">
+<li>
+<p>Tras unos minutos, el proceso finalizará, y podremos comprobar como, al apagar y encender, el ZXTRES vuelve a arrancar correctamente.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Si no se obtiene imagen, y no se está utilizando DisplayPort, pulsar de nuevo <code>Bloq. Despl.</code> para cambiar entre modo de video compuesto y VGA. En este caso, sería necesario acceder a la BIOS y cambiar el <a href="#_advanced">ajuste avanzado correspondiente</a> para indicar la configuración de nuestro monitor.</p>
 </div>
 </td>
 </tr>
@@ -8522,6 +8753,21 @@ cd</span> ..
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
+<p>Añadir permisos a los usuarios para poder acceder al programador JTAG, para ello, descargar el fichero de reglas <a href="https://github.com/trabucayre/openFPGALoader/blob/master/99-openfpgaloader.rules"><code>99-openfpgaloader.rules</code></a> y ejecutar estos comandos:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">groupadd plugdev
+<span class="nb">sudo cp </span>99-openfpgaloader.rules /etc/udev/rules.d/
+<span class="nb">sudo </span>udevadm control <span class="nt">--reload-rules</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>udevadm trigger
+usermod <span class="nt">-a</span> <span class="nv">$USER</span> <span class="nt">-G</span> plugdev</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
 <p>Conectar el USB-Blaster o los cables puente para GPIO <a href="#_preparación_del_cableado">tal y como se explica anteriormente</a>. Si se va a hacer la conexión usando GPIO, abrir la carcasa del ZXTRES y conectar las líneas de JTAG de la FPGA (<code>TMS</code>, <code>TDI</code>, <code>TDO</code>, <code>TCK</code> y <code>GND</code>), con los cables, a los pines <a href="https://es.wikipedia.org/wiki/GPIO">GPIO</a> de la Raspberry Pi.</p>
 </li>
 </ol>
@@ -8577,15 +8823,10 @@ cd</span> ..
 </tbody>
 </table>
 <div class="olist arabic">
-<ol class="arabic" start="4">
+<ol class="arabic" start="5">
 <li>
 <p>Copiar en la Raspberry Pi el fichero <code>recovery_axx.bit</code> obtenido anteriormente del <a href="https://github.com/zxtres/cores/tree/main/recovery">repositorio principal de Github</a>. En nuestro ejemplo, se dejará en <code>/home/pi/zxtres/unbrick/</code></p>
 </li>
-</ol>
-</div>
-<div style="page-break-after: always;"></div>
-<div class="olist arabic">
-<ol class="arabic" start="5">
 <li>
 <p>Para la conexión usando GPIO, realizar una copia del archivo de configuración de Open OCD, en el mismo lugar donde está <code>recovery.bit</code>. Este paso no es necesario si se usa USB-Blaster.</p>
 </li>
@@ -8597,7 +8838,7 @@ cd</span> ..
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="6">
+<ol class="arabic" start="7">
 <li>
 <p>Para la conexión vía GPIO, editar la copia de <code>raspberrypi2-native.cfg</code> actualizando <code>bcm2835gpio_jtag_nums</code> (y descomentando, si fuera necesario), según como se haya hecho la conexión entre JTAG y GPIO en la línea <code>bcm2835gpio_jtag_nums</code>. En nuestro ejemplo:</p>
 </li>
@@ -8610,7 +8851,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="7">
+<ol class="arabic" start="8">
 <li>
 <p>Comentar, si no lo está, la línea <code>bcm2835gpio_swd_nums</code> (de nuevo, no necesario si la conexión es con USB-Blaster):</p>
 </li>
@@ -8622,7 +8863,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="8">
+<ol class="arabic" start="9">
 <li>
 <p>Añadir, al final, la línea <code>adapter speed 250</code> (no necesario para uso con USB-Blaster):</p>
 </li>
@@ -8634,7 +8875,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="9">
+<ol class="arabic" start="10">
 <li>
 <p>Encender el ZXTRES</p>
 </li>
@@ -8642,7 +8883,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="olist arabic">
-<ol class="arabic" start="10">
+<ol class="arabic" start="11">
 <li>
 <p>Asegurarnos de que estamos en el directorio donde se encuentra el archivo <code>recovery_axx.bit</code>, y lanzar el comando que carga la BIOS en modo recuperación, indicando, si fuera necesario, la ruta al archivo <code>raspberrypi2-native.cfg</code> que habíamos editado anteriormente</p>
 </li>
@@ -8681,7 +8922,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </table>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="11">
+<ol class="arabic" start="12">
 <li>
 <p>Si todo va bien, veremos cómo cambia el estado de los LED de la FPGA y veremos la imagen de la BIOS en el monitor.</p>
 </li>
@@ -8695,7 +8936,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="olist arabic">
-<ol class="arabic" start="12">
+<ol class="arabic" start="13">
 <li>
 <p>Insertar en el ZXTRES la tarjeta SD con la primera partición en formato FAT16 o FAT32, y en la que habremos copiado el fichero <code>FLASH.ZX3</code> descargado anteriormente.</p>
 </li>
@@ -8725,7 +8966,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 </table>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="15">
+<ol class="arabic" start="16">
 <li>
 <p>Tras unos minutos, el proceso finalizará, y podremos comprobar como, al apagar y encender, el ZXTRES vuelve a arrancar correctamente.</p>
 </li>
@@ -11141,7 +11382,7 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 <div id="footer">
 <div id="footer-text">
 Versión 1.0.0b<br>
-Última actualización 2023-10-08 16:49:34 +0200
+Última actualización 2023-10-11 20:36:19 +0200
 </div>
 </div>
 </body>
