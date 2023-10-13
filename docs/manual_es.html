@@ -740,7 +740,7 @@ pre.rouge {
 <h1>Manual de ZXTRES, ZXTRES+ y ZXTRES++</h1>
 <div class="details">
 <span id="author" class="author">ES</span><br>
-<span id="email" class="email">2023-10-12</span><br>
+<span id="email" class="email">2023-10-13</span><br>
 <span id="revnumber">versión 1.0.0b</span>
 </div>
 <div id="toc" class="toc2">
@@ -1153,7 +1153,7 @@ pre.rouge {
 </li>
 <li><a href="#_recuperación_del_firmware">Recuperación del firmware</a>
 <ul class="sectlevel3">
-<li><a href="#_preparación_del_cableado">Preparación del cableado</a></li>
+<li><a href="#_preparación_del_cableado_jtag">Preparación del cableado JTAG</a></li>
 <li><a href="#_recuperación_usando_macos_o_linux_y_usb_blaster">Recuperación usando macOS o Linux y USB-Blaster</a></li>
 <li><a href="#_recuperación_usando_una_raspberry_pi">Recuperación usando una Raspberry Pi</a></li>
 </ul>
@@ -1229,6 +1229,22 @@ pre.rouge {
 <li><a href="#_out_run">Out Run</a></li>
 <li><a href="#_pang">Pang</a></li>
 <li><a href="#_sega_system_16b">Sega System 16B</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_jtag">JTAG</a>
+<ul class="sectlevel3">
+<li><a href="#_modificación_de_eeprom">Modificación de EEPROM</a></li>
+<li><a href="#_ft232h">FT232H</a></li>
+<li><a href="#_conexión_del_cableado">Conexión del cableado</a>
+<ul class="sectlevel4">
+<li><a href="#_ft232h_2">FT232H</a></li>
+</ul>
+</li>
+<li><a href="#_uso_con_openocd_y_openfpgaloader">Uso con OpenOCD y OpenFPGALoader</a>
+<ul class="sectlevel4">
+<li><a href="#_ft232h_3">FT232H</a></li>
 </ul>
 </li>
 </ul>
@@ -3801,7 +3817,7 @@ NEW DATA "Utils",8</code></pre>
 <p>Iniciar el core ZX Spectrum de ZXTRES.</p>
 </li>
 <li>
-<p>Pulsar <code>F5</code> para abrir el navegador de Bob Fossil y luego navegar hasta la ubicación del fichero con extensión <code>.MID</code>, seleccionarlo y pulsar <code>Enter`</code>.</p>
+<p>Pulsar <code>F5</code> para abrir el navegador de Bob Fossil y luego navegar hasta la ubicación del fichero con extensión <code>.MID</code>, seleccionarlo y pulsar <code>Enter</code>.</p>
 </li>
 </ol>
 </div>
@@ -4038,7 +4054,7 @@ NEW DATA "Utils",8</code></pre>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="paragraph">
-<p>Se ha de copiar el fichero <code>.ZX3</code> (fichero .BIN completo) correspondiente en el lugar que se desee de la tarjeta microSD, así como el plugin ZX3 adecuado (en la carpeta <code>BIN/BPLUGINS`</code>).</p>
+<p>Se ha de copiar el fichero <code>.ZX3</code> (fichero .BIN completo) correspondiente en el lugar que se desee de la tarjeta microSD, así como el plugin ZX3 adecuado (en la carpeta <code>BIN/BPLUGINS</code>).</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -4076,7 +4092,7 @@ NEW DATA "Utils",8</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Se ha de copiar el fichero con la extensión <code>.BIT</code> en el lugar que se desee de la tarjeta microSD, así como el fichero del plugin BIT (en la carpeta <code>BIN/BPLUGINS`</code>).</p>
+<p>Se ha de copiar el fichero con la extensión <code>.BIT</code> en el lugar que se desee de la tarjeta microSD, así como el fichero del plugin BIT (en la carpeta <code>BIN/BPLUGINS</code>).</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -4422,13 +4438,13 @@ NEW DATA "Utils",8</code></pre>
 <p><code>Supr</code>: <code>CLR</code>.</p>
 </li>
 <li>
-<p><code>Impr. Pant</code> o <code>Windows Izquierda</code> : <code>COPY</code></p>
+<p><code>Impr. Pant</code> o <code>Windows Izquierda</code>: <code>COPY</code></p>
 </li>
 <li>
-<p><code>Inicio</code> : Scanlines on/off</p>
+<p><code>Inicio</code>: Scanlines on/off</p>
 </li>
 <li>
-<p><code>Fin</code> : Activa los distintos modos de color monocromo</p>
+<p><code>Fin</code>: Activa los distintos modos de color monocromo</p>
 </li>
 <li>
 <p><code>Bloq. Despl.</code>: cambia de modo vídeo RGB (PAL) a VGA y viceversa (DisplayPort está siempre activo)</p>
@@ -4500,7 +4516,7 @@ NEW DATA "Utils",8</code></pre>
 <p>Se debe de utilizar una tarjeta microSD con la primera partición en formato FAT16 o FAT32.</p>
 </div>
 <div class="paragraph">
-<p>Además son necesarios los ficheros ROM siguientes (se pueden obtener <a href="http://www.cpcwiki.eu/index.php/FPGAmstrad#How_to_assemble_it">en la wiki oficial</a> de otro proyecto más antiguo o en su <a href="https://github.com/renaudhelias/FPGAmstrad/raw/master/OS6128_BASIC1-1_AMSDOS_MAXAM.zip">repositorio de GitHub</a>:</p>
+<p>Además son necesarios los ficheros ROM siguientes que se pueden obtener <a href="http://www.cpcwiki.eu/index.php/FPGAmstrad#How_to_assemble_it">en la wiki oficial</a> de otro proyecto más antiguo o en su <a href="https://github.com/renaudhelias/FPGAmstrad/raw/master/OS6128_BASIC1-1_AMSDOS_MAXAM.zip">repositorio de GitHub</a>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4560,13 +4576,13 @@ NEW DATA "Utils",8</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>F12</code> mostrar y ocultar el menú de selección de imágenes de disco</p>
+<p><code>F12</code>: Mostrar y ocultar el menú de selección de imágenes de disco</p>
 </li>
 <li>
-<p><code>Bloq. Despl.</code>: para cambiar entre modo de vídeo RGB y VGA</p>
+<p><code>Bloq. Despl.</code>: Para cambiar entre modo de vídeo RGB y VGA</p>
 </li>
 <li>
-<p><code>Fin</code> : Alterna entre los modos de color y monocromo fósforo verde</p>
+<p><code>Fin</code>: Alterna entre los modos de color y monocromo fósforo verde</p>
 </li>
 <li>
 <p><code>Ctrl+Alt+Supr</code>: Soft Reset (reinicia el Core)</p>
@@ -4614,13 +4630,16 @@ NEW DATA "Utils",8</code></pre>
 <p><a href="https://es.wikipedia.org/wiki/1942_(videojuego)">1942</a> es un videojuego, lanzado para máquinas recreativas en 1984.</p>
 </div>
 <div class="paragraph">
-<p>La versión para ZXTRES ha sido desarrollada por somhic, adaptando de la ttps://github.com/jotego/jtcores/tree/master/cores/1942[versión original de Jotego].</p>
+<p>La versión para ZXTRES ha sido desarrollada por somhic, adaptando de la <a href="https://github.com/jotego/jtcores/tree/master/cores/1942">versión original de Jotego</a>.</p>
 </div>
 <div class="paragraph">
 <p>Algunas de sus características son:</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p>La salida de vídeo mantiene la rotación del original</p>
+</li>
 <li>
 <p>Salida de vídeo VGA</p>
 </li>
@@ -4671,13 +4690,13 @@ NEW DATA "Utils",8</code></pre>
 <p>Cursor o el mando 1: Controles de dirección del jugador uno</p>
 </li>
 <li>
-<p><code>Ctrl</code> o botón A del mando 1: Botón del jugador uno</p>
+<p><code>Ctrl</code>, <code>Alt</code> o botones A, B del mando 1: Botones del jugador uno</p>
 </li>
 <li>
 <p><code>R</code>,<code>F</code>,<code>G</code>,<code>D</code> o mando 2: Movimiento del jugador dos</p>
 </li>
 <li>
-<p><code>A</code> o botón A del mando 2: Botón del jugador dos</p>
+<p><code>A</code>,  `S`o botones A, B del mando 2: Botones del jugador dos</p>
 </li>
 <li>
 <p><code>1</code> y <code>2</code>: Iniciar partida jugador 1 o jugador 2</p>
@@ -4708,6 +4727,9 @@ NEW DATA "Utils",8</code></pre>
 <ul>
 <li>
 <p><code>Load ARC</code>: Para cargar desde la tarjeta microSD un fichero .ARC</p>
+</li>
+<li>
+<p><code>Rotate Controls</code>: Para girar el texto del menú de opciones, así como el comportamiento de los controles de dirección</p>
 </li>
 <li>
 <p><code>Video Mode</code>: Sólo en el caso de salida de vídeo VGA, para aplicar distintos filtros a la imagen</p>
@@ -6145,7 +6167,7 @@ NEW DATA "Utils",8</code></pre>
 <p><span class="image"><img src="img/enterprisefile.jpg" alt="enterprisefile"></span></p>
 </div>
 <div class="paragraph">
-<p>Los archivos ejecutables son <code>COM`</code>.</p>
+<p>Los archivos ejecutables son <code>COM</code>.</p>
 </div>
 <div class="paragraph">
 <p>También es posible cargar programas sin usar el navegador. Un ejemplo:</p>
@@ -6222,10 +6244,10 @@ NEW DATA "Utils",8</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Inicio</code> : Scanlines on/off</p>
+<p><code>Inicio</code>: Scanlines on/off</p>
 </li>
 <li>
-<p><code>Fin</code> : Activa los distintos modos de color monocromo</p>
+<p><code>Fin</code>: Activa los distintos modos de color monocromo</p>
 </li>
 <li>
 <p><code>Bloq. Despl.</code>: cambia de modo vídeo RGB (PAL) a VGA y viceversa (DisplayPort está siempre activo)</p>
@@ -6405,10 +6427,10 @@ NEW DATA "Utils",8</code></pre>
 <p><code>Load Cart</code>: Para cargar desde la tarjeta microSD un fichero .neo</p>
 </li>
 <li>
-<p><code>Load Cart (skip ADPCM)`</code></p>
+<p><code>Load Cart (skip ADPCM)</code></p>
 </li>
 <li>
-<p><code>Load BIOS`</code>: Para cargar desde la tarjeta microSD un fichero BIOS distinto de <code>neogeo.rom</code></p>
+<p><code>Load BIOS</code>: Para cargar desde la tarjeta microSD un fichero BIOS distinto de <code>neogeo.rom</code></p>
 </li>
 <li>
 <p><code>Load Memory Card</code></p>
@@ -8413,15 +8435,26 @@ Programador: "USBasp"</code></pre>
 <div class="sect2">
 <h3 id="_recuperación_del_firmware">Recuperación del firmware</h3>
 <div class="paragraph">
-<p>En algunos casos (por ejemplo al instalar un core experimental o hacer una actualización del core de ZX Spectrum o la BIOS) puede suceder que el ZXTRES deje de arrancar. Se encienden los LEDs pero no hay imagen ni responde a las distintas combinaciones de teclado para acceder a la BIOS, etc.</p>
+<p>En algunos casos (por ejemplo al instalar un core experimental o hacer una actualización del core de ZX Spectrum o la BIOS) puede suceder que el ZXTRES deje de arrancar. Se encienden los LEDs pero no hay imagen ni responde a las distintas combinaciones de teclado para acceder a la BIOS, etc. En esta situación, existen diferentes métodos de recuperación que permiten volver a instalar el firmware.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>En esta situación, existen diferentes métodos de recuperación que permiten volver a instalar el firmware.</p>
+<p>En la sección de <a href="#_jtag">referencias</a> hay información para poder usar otros programadores JTAG distintos de USB-Blaster.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
-<h4 id="_preparación_del_cableado">Preparación del cableado</h4>
+<h4 id="_preparación_del_cableado_jtag">Preparación del cableado JTAG</h4>
 <div class="paragraph">
-<p>En los siguientes pasos se habla de conectar cables puente o USB-Blaster a la placa de ZXTRES. Para ello, usar las siguientes imágenes como referencia.</p>
+<p>En los siguientes pasos se habla de conectar cables puente o USB-Blaster a la placa de ZXTRES. Para ello, usar las siguientes imágenes como referencia para conectar TMS, TDI, TDO, TCK y GND.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="img/jtagzxtres.jpg" alt="jtagzxtres"></span></p>
@@ -8561,7 +8594,7 @@ usermod <span class="nt">-a</span> <span class="nv">$USER</span> <span class="nt
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
-<p>Conectar el USB-Blaster al ordenador, y los cables correspondientes al ZXTRES <a href="#_preparación_del_cableado">tal y como se explica anteriormente</a>. Si ya estuviera conectado, desconectar y volver a conectar para asegurarse de que se activan las reglas de udev.</p>
+<p>Conectar el USB-Blaster al ordenador, y los cables correspondientes al ZXTRES <a href="#_preparación_del_cableado_jtag">tal y como se explica anteriormente</a>. Si ya estuviera conectado, desconectar y volver a conectar para asegurarse de que se activan las reglas de udev.</p>
 </li>
 <li>
 <p>Obtener el fichero <code>recovery.bit</code> del <a href="https://github.com/zxtres/cores/tree/main/recovery">repositorio principal de Github</a>. En nuestro ejemplo, se dejará en <code>/home/zxtres/unbrick/</code> (y en <code>/Users/zxtres/unbrick/</code> en el caso de macOS).</p>
@@ -8793,7 +8826,7 @@ usermod <span class="nt">-a</span> <span class="nv">$USER</span> <span class="nt
 <div class="olist arabic">
 <ol class="arabic" start="4">
 <li>
-<p>Conectar el USB-Blaster o los cables puente para GPIO <a href="#_preparación_del_cableado">tal y como se explica anteriormente</a>. Si se va a hacer la conexión usando GPIO, conectar las líneas de JTAG de la FPGA (<code>TMS</code>, <code>TDI</code>, <code>TDO</code>, <code>TCK</code> y <code>GND</code>), con los cables, a los pines <a href="https://es.wikipedia.org/wiki/GPIO">GPIO</a> de la Raspberry Pi.</p>
+<p>Conectar el USB-Blaster o los cables puente para GPIO <a href="#_preparación_del_cableado_jtag">tal y como se explica anteriormente</a>. Si se va a hacer la conexión usando GPIO, conectar las líneas de JTAG de la FPGA (<code>TMS</code>, <code>TDI</code>, <code>TDO</code>, <code>TCK</code> y <code>GND</code>), con los cables, a los pines <a href="https://es.wikipedia.org/wiki/GPIO">GPIO</a> de la Raspberry Pi.</p>
 </li>
 </ol>
 </div>
@@ -11312,6 +11345,166 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 </div>
 </div>
 <div class="sect2">
+<h3 id="_jtag">JTAG</h3>
+<div class="paragraph">
+<p>Existen varios proyectos que permiten modificar la EEPROM de placas USB con chips FTDI con capacidad para hablar protocolo JTAG, de forma que se comporten como clones de un <a href="https://digilent.com/shop/fpga-boards/programmers/">cable programador JTAG</a> oficial, de forma más económica.</p>
+</div>
+<div class="paragraph">
+<p>Los chips soportados son <a href="https://www.ftdichip.com/old2020/Products/ICs/FT2232H.html">FT2232H</a> y <a href="https://www.ftdichip.com/old2020/Products/ICs/FT232H.htm">FT232H</a>.</p>
+</div>
+<div class="paragraph">
+<p>Se necesita un sistema con Linux, bien físico, ben virtual, y con USB para poder realizar la modificación de la EEPROM. Una vez actualizada, se puede utilzar con cualuier otro sistema operativo comoWindows o macOS.</p>
+</div>
+<div class="sect3">
+<h4 id="_modificación_de_eeprom">Modificación de EEPROM</h4>
+<div class="paragraph">
+<p>En primer lugar, se ha de instalar libftdi y la utilidad ftdi-eeprom en el sistema Linux.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo para Debian Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">apt-get <span class="nb">install </span>libftdi1 ftdi-eeprom</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para Arch Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">pacman <span class="nt">-S</span> libftdi</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ft232h">FT232H</h4>
+<div class="paragraph">
+<p>Descargar el <a href="https://github.com/vanbwodonk/ft2232hl-jtag-clone/tree/main/eeprom_binary">nuevo firmware desde GitHub</a>.</p>
+</div>
+<div class="paragraph">
+<p>Conectar la placa USB al sistema y obtener el identificador usando el comando <code>dmesg</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">dmesg
+... usb -: New USB device found, <span class="nv">idVendor</span><span class="o">=</span>0403, <span class="nv">idProduct</span><span class="o">=</span>6014, <span class="nv">bcdDevice</span><span class="o">=</span>...
+<span class="o">(</span>..,<span class="o">)</span>
+... usb -: Manufacturer: FTDI</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Localizar los datos encontrados en el fichero correspondiente (<code>flash_alinx_ft232h.conf</code>, <code>flash_digilent_hs2.conf</code> o <code>flash_digilent_smt1.conf</code>), y utilizar este fichero para los siguientes pasos.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Actualizar el contenido de la EEPROM.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">ftdi_eeprom <span class="nt">--flash-eeprom</span> flash_<span class="o">(</span>...<span class="o">)</span>.conf</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Notar que se puede realizar una copia previa del contenido de la EEPROM con el comando siguiente</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">ftdi_eeprom <span class="nt">--read-eeprom</span> flash_<span class="o">(</span>...<span class="o">)</span>.conf</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Esto modificará el fichero <code>.bin</code> correspondiente, así que, para poder hacer luego la actualización, se tendrá que recuperar el fichero descargado originalmente.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ahora, desconectar y conectar el USB y comprobar de nuevo con <code>dmesg</code> que el firmware se identifica como Diligent.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">dmesg
+<span class="o">(</span>...<span class="o">)</span>
+... usb -: Product: Digilent USB Device
+... usb -: Manufacturer: Digilent
+... usb -: <span class="o">(</span>...<span class="o">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para el uso con OpenOCD, descargar el fichero de configuración del <a href="https://github.com/zxtres/wiki/blob/main/Files/OpenOCD_0.10.0-11/FT2232H_FT232H.cfg">repositorio de GitHub de ZXTRES</a>, al directorio de trabajo (en los ejemplos, <code>/home/zxtres/unbrick</code> o <code>/Users/zxtres/unbrick</code> para macOS).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conexión_del_cableado">Conexión del cableado</h4>
+<div class="sect4">
+<h5 id="_ft232h_2">FT232H</h5>
+<div class="paragraph">
+<p>Usar la siguiente imagen como referencia para conectar TMS, TDI, TDO, TCK y GND.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/ft232zxtres.png" alt="ft232zxtres"></span></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>NUNCA</strong> se ha de conectar la línea de 3V (VCC)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_uso_con_openocd_y_openfpgaloader">Uso con OpenOCD y OpenFPGALoader</h4>
+<div class="sect4">
+<h5 id="_ft232h_3">FT232H</h5>
+<div class="paragraph">
+<p>Los comandos a utilizar son los mismos que se indican en las <a href="#_recuperación_del_firmware">instrucciones de recuperación</a>, pero usando referencias a FT2232H, FT232H en vez de <code>usb-blaster</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> /home/zxtres/unbrick
+<span class="nb">sudo </span>openocd <span class="nt">-f</span> FT2232H_FT232H.cfg <span class="nt">-f</span> /usr/share/openocd/scripts/cpld/xilinx-xc7.cfg <span class="nt">-c</span> <span class="s2">"init; pld load 0 recovery.bit;"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En macOS con OpenOCD:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> /Users/zxtres/unbrick
+openocd <span class="nt">-f</span> FT2232H_FT232H.cfg <span class="nt">-f</span> /opt/homebrew/share/openocd/scripts/cpld/xilinx-xc7.cfg <span class="nt">-c</span> <span class="s2">"init; pld load 0 recovery.bit;"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En Linux o macOS con OpenFPGALoader:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> /Users/zxtres/unbrick
+openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_enlaces">Enlaces</h3>
 <div class="paragraph">
 <p><a href="https://zxuno.speccy.org/index.shtml">ZX-Uno</a></p>
@@ -11400,6 +11593,15 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 <div class="paragraph">
 <p><a href="https://www.zxuno.com/wiki/index.php?title=ZX_Spectrum">Spectrum en Wiki de ZX-Uno</a></p>
 </div>
+<div class="paragraph">
+<p><a href="https://github.com/erd0spy/ft232h_to_digilent_fpga_programmer">Cracking FT232H to make Digilent JTAG Programmer</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/vanbwodonk/ft2232hl-jtag-clone/tree/main">FT2232HL-jtag-clone</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://gist.github.com/rikka0w0/24b58b54473227502fa0334bbe75c3c1">FT2232 to Digilent JTag for Xilinx FPGAs (ISE/Vivado)</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -11407,7 +11609,7 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 <div id="footer">
 <div id="footer-text">
 Versión 1.0.0b<br>
-Última actualización 2023-10-12 18:16:09 +0200
+Última actualización 2023-10-13 15:42:54 +0200
 </div>
 </div>
 </body>
