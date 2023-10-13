@@ -1235,8 +1235,11 @@ pre.rouge {
 </li>
 <li><a href="#_jtag">JTAG</a>
 <ul class="sectlevel3">
-<li><a href="#_modificación_de_eeprom">Modificación de EEPROM</a></li>
+<li><a href="#_modificación_de_eeprom">Modificación de EEPROM</a>
+<ul class="sectlevel4">
 <li><a href="#_ft232h">FT232H</a></li>
+</ul>
+</li>
 <li><a href="#_conexión_del_cableado">Conexión del cableado</a>
 <ul class="sectlevel4">
 <li><a href="#_ft232h_2">FT232H</a></li>
@@ -11376,9 +11379,8 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 <pre class="rouge highlight"><code data-lang="shell">pacman <span class="nt">-S</span> libftdi</code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_ft232h">FT232H</h4>
+<div class="sect4">
+<h5 id="_ft232h">FT232H</h5>
 <div class="paragraph">
 <p>Descargar el <a href="https://github.com/vanbwodonk/ft2232hl-jtag-clone/tree/main/eeprom_binary">nuevo firmware desde GitHub</a>.</p>
 </div>
@@ -11441,6 +11443,7 @@ Si el valor de offset es tal que hace que al explorar la memoria de pantalla par
 </div>
 <div class="paragraph">
 <p>Para el uso con OpenOCD, descargar el fichero de configuración del <a href="https://github.com/zxtres/wiki/blob/main/Files/OpenOCD_0.10.0-11/FT2232H_FT232H.cfg">repositorio de GitHub de ZXTRES</a>, al directorio de trabajo (en los ejemplos, <code>/home/zxtres/unbrick</code> o <code>/Users/zxtres/unbrick</code> para macOS).</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -11609,7 +11612,7 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 <div id="footer">
 <div id="footer-text">
 Versión 1.0.0b<br>
-Última actualización 2023-10-13 15:42:54 +0200
+Última actualización 2023-10-13 17:02:39 +0200
 </div>
 </div>
 </body>
