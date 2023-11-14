@@ -740,7 +740,7 @@ pre.rouge {
 <h1>ZXTRES, ZXTRES+ and ZXTRES++ Manual</h1>
 <div class="details">
 <span id="author" class="author">EN</span><br>
-<span id="email" class="email">2023-10-13</span><br>
+<span id="email" class="email">2023-11-14</span><br>
 <span id="revnumber">version 1.0.0b</span>
 </div>
 <div id="toc" class="toc2">
@@ -1221,25 +1221,59 @@ pre.rouge {
 <li><a href="#_games_by_core">Games by core</a>
 <ul class="sectlevel4">
 <li><a href="#_1942">1942</a></li>
+<li><a href="#_1943">1943</a></li>
 <li><a href="#_atari_tetris">Atari Tetris</a></li>
+<li><a href="#_bionic_commando">Bionic Commando</a></li>
+<li><a href="#_bad_dudes_vs_dragonninja">Bad Dudes Vs. DragonNinja</a></li>
+<li><a href="#_black_tiger">Black Tiger</a></li>
+<li><a href="#_bubble_bobble">Bubble Bobble</a></li>
 <li><a href="#_capcom_play_system_1">Capcom Play System 1</a></li>
 <li><a href="#_capcom_play_system_1_5">Capcom Play System 1.5</a></li>
+<li><a href="#_capcom_play_system_2">Capcom Play System 2</a></li>
+<li><a href="#_combat_school">Combat School</a></li>
+<li><a href="#_commando">Commando</a></li>
+<li><a href="#_contra">Contra</a></li>
 <li><a href="#_double_dragon">Double Dragon</a></li>
+<li><a href="#_double_dragon_2">Double Dragon 2</a></li>
+<li><a href="#_exed_exes">Exed Exes</a></li>
+<li><a href="#_f_1_dream">F-1 Dream</a></li>
+<li><a href="#_ghosts_n_goblins">Ghosts 'n Goblins</a></li>
+<li><a href="#_gun_smoke">Gun.Smoke</a></li>
+<li><a href="#_haunted_castle">Haunted Castle</a></li>
+<li><a href="#_hyper_dyne_side_arms">Hyper Dyne Side Arms</a></li>
+<li><a href="#_karate_champ">Karate Champ</a></li>
 <li><a href="#_kicker">Kicker</a></li>
+<li><a href="#_midnight_resistance">Midnight Resistance</a></li>
+<li><a href="#_mikie">Mikie</a></li>
+<li><a href="#_the_new_zealand_story">The New Zealand Story</a></li>
 <li><a href="#_out_run">Out Run</a></li>
 <li><a href="#_pang">Pang</a></li>
+<li><a href="#_ping_pong">Ping-Pong</a></li>
+<li><a href="#_pirate_ship_higemaru">Pirate Ship Higemaru</a></li>
+<li><a href="#_rastan_saga">Rastan Saga</a></li>
+<li><a href="#_renegade">Renegade</a></li>
+<li><a href="#_road_fighter">Road Fighter</a></li>
+<li><a href="#_robocop">Robocop</a></li>
+<li><a href="#_rocn_rope">Roc&#8217;n Rope</a></li>
+<li><a href="#_sega_system_16">Sega System 16</a></li>
 <li><a href="#_sega_system_16b">Sega System 16B</a></li>
+<li><a href="#_section_z">Section Z</a></li>
+<li><a href="#_sly_spy">Sly Spy</a></li>
+<li><a href="#_the_speed_rumbler">The Speed Rumbler</a></li>
+<li><a href="#_super_hang_on">Super Hang-On</a></li>
+<li><a href="#_tiger_road">Tiger Road</a></li>
+<li><a href="#_trick_trap">Trick Trap</a></li>
+<li><a href="#_trojan">Trojan</a></li>
+<li><a href="#_vigilante">Vigilante</a></li>
+<li><a href="#_vulgus">Vulgus</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#_jtag">JTAG</a>
 <ul class="sectlevel3">
-<li><a href="#_eeprom_modification">EEPROM modification</a>
-<ul class="sectlevel4">
+<li><a href="#_eeprom_modification">EEPROM modification</a></li>
 <li><a href="#_ft232h">FT232H</a></li>
-</ul>
-</li>
 <li><a href="#_wiring_connection">Wiring connection</a>
 <ul class="sectlevel4">
 <li><a href="#_ft232h_2">FT232H</a></li>
@@ -1885,7 +1919,7 @@ exit</code></pre>
 <pre class="rouge highlight"><code>select disk 6
 clean
 create part primary size=4000
-set id = 06
+set id=06
 active
 format fs=FAT label=ZXTRES quick
 create part primary size=4000
@@ -1903,7 +1937,7 @@ exit</code></pre>
 <pre class="rouge highlight"><code>select disk 6
 clean
 create part primary size=4000
-set id = 0b
+set id=0b
 active
 format fs=FAT32 label=ZXTRES unit=4k quick
 create part primary
@@ -4006,7 +4040,7 @@ NEW DATA "Utils",8</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Some devices, when connected to the joystick ports, may cause a flashing red border when starting the browser. This is solved by disabling the Kempston joystick in your configuration (with the <a href="#_esxdos_commands">"DOT" command</a> <code>.brwscfg</code>).</p>
+<p>Some devices, when connected to the joystick ports, may cause a flashing red border when starting the browser. This may be solved by disabling the Kempston joystick in your configuration (with the <a href="#_esxdos_commands">"DOT" command</a> <code>.brwscfg</code>) or, sometimes, <em>connecting simultaneously a controller to the second port</em>.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="img/brwscfg.jpg" alt="brwscfg"></span></p>
@@ -4122,6 +4156,23 @@ NEW DATA "Utils",8</code></pre>
 <div class="sect1">
 <h2 id="_other_cores">Other cores</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>As explained before, you can use other <a href="#_cores">cores</a> besides the ZX Spectrum default.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Many of the cores show file and folder entries in the order stored in the microSD internal FAT table and not alphabetically. If you want to see them ordered you ha to reorder the microSD card structure with a utility such as <a href="https://fatsort.sourceforge.io/">FATsort</a>, <a href="https://www.luisrios.eti.br/public/en_us/projects/yafs/">YAFS</a>, <a href="http://www.trustfm.net/software/utilities/SDSorter.phpp">SDSorter</a> or another application.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_amiga_minimig_aga">Amiga minimig AGA</h3>
 <div class="paragraph">
@@ -4556,7 +4607,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Kicker.mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as JT1942.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -4680,7 +4745,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Kicker.mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/MiSTer-devel/Arcade-ATetris_MiSTer">repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as TETRIS.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -4805,6 +4884,20 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 </div>
 <div class="paragraph">
 <p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card.</p>
@@ -4945,6 +5038,20 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <div class="paragraph">
 <p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card.</p>
 </div>
@@ -5079,7 +5186,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Double%20Dragon%20(Japan).mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as JTDD.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -5212,7 +5333,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Kicker.mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as JKICKER.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -5333,7 +5468,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Double%20Dragon%20(Japan).mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as JTOUTRUN.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -5483,7 +5632,21 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>The core needs files with the original arcade machine chips <a href="https://en.wikipedia.org/wiki/ROM_image">ROM images</a>, merged into a single .ROM file, together with at least one .ARC file containing the name of the ROM file to be loaded, as well as the configuration of the <a href="https://en.wikipedia.org/wiki/DIP_switch">DIP switches</a> configuration for the original machine.</p>
 </div>
 <div class="paragraph">
-<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/blob/master/mra/Pang%20(World).mra">creator&#8217;s repository</a>.</p>
+<p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card. However, if there&#8217;s a directory named JOTEGO directory in the root of the card, and inside there are the ARC file named as JTPANG.ARC, together with the corresponding ROM file, both will be loaded automatically when the core starts.</p>
@@ -5618,6 +5781,20 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <div class="paragraph">
 <p>Both ROM and ARC files can be created using <a href="#_mra_tool">MRA Tool</a>, taking as reference the MRA files available in the original core <a href="https://github.com/jotego/jtbin/tree/master/mra">creator&#8217;s repository</a>.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="https://github.com/kounch/ARC_ROM_Builder#castellano">ARC and ROM Builder</a> utility allows you to build the ARC and ROM file structure suitable for use with Jotego cores by downloading everything you need from the internet.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>ARC and ROM files can be placed anywhere in the microSD card.</p>
 </div>
@@ -5646,19 +5823,19 @@ Unlike the original machine, you can hear the audio while playing the tape.</p>
 <p>Cursor or controller 1: Player 1 directional controls</p>
 </li>
 <li>
-<p><code>Ctrl</code>, <code>Alt</code> and <code>Space</code> or Controller 1: Player one buttons 1, 2 and 3</p>
+<p><code>Ctrl</code>, <code>Alt</code> and <code>Space</code> or Controller 1 buttons A, B, C: Player one buttons 1, 2 and 3</p>
 </li>
 <li>
 <p><code>R</code>,<code>F</code>,<code>G</code>,<code>D</code> or controller 2: Player two movement</p>
 </li>
 <li>
-<p><code>A</code>, <code>S</code> and <code>Q</code> or controller 2: Player two buttons 1, 2 and 3</p>
+<p><code>A</code>, <code>S</code> and <code>Q</code> or controller 2 buttons A, B, C: Player two buttons 1, 2 and 3</p>
 </li>
 <li>
-<p><code>1</code> and <code>2</code>: to start game player 1 or player 2</p>
+<p><code>1</code> and <code>2</code> or controller button Y: to start game player 1 or player 2</p>
 </li>
 <li>
-<p><code>5</code> and <code>6</code>: to insert a coin</p>
+<p><code>5</code> and <code>6</code> or controller button X: to insert a coin</p>
 </li>
 <li>
 <p><code>P</code>: Pause</p>
@@ -6169,7 +6346,7 @@ cd bricky
 <div class="sect3">
 <h4 id="_overview_17">Overview</h4>
 <div class="paragraph">
-<p>From within Forth, you can load from a external tape or other external audio device with the comand <code>LOAD &lt;nombre&gt;</code>.</p>
+<p>From within Forth, you can load from a external tape or other external audio device with the comand <code>LOAD &lt;name&gt;</code>.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -7419,7 +7596,7 @@ CHROMA81: Enabled.</p>
 <p><a href="#_wi_fi">Wi-Fi</a> (via <a href="https://es.wikipedia.org/wiki/ESP8266">ESP8266</a>)</p>
 </li>
 <li>
-<p><a href="#_midi">MIDI</a> (via <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html%23rp2040-device">RP2040 microcontroller</a>),</p>
+<p><a href="#_midi">MIDI</a> (via <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html%23rp2040-device">RP2040 microcontroller</a>)</p>
 </li>
 <li>
 <p><a href="#_rtc">RTC (real time clock)</a></p>
@@ -7608,6 +7785,9 @@ make</code></pre>
 <h4 id="_mobile_phone_tablet_mp3_player_and_so_on">Mobile phone tablet MP3 player and so on</h4>
 <div class="paragraph">
 <p>There are only a few apps (or none) that can directly play a tape file on a mobile device so in many cases the only option is to convert it to an audio file before playing it.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://zxtape.net" class="bare">https://zxtape.net</a> is a website, mobile device compatible, which can play TZP and TZX files</p>
 </div>
 <div class="paragraph">
 <p><a href="https://play.google.com/store/apps/details?id=com.baltazarstudios.playzxtapes">PlayZX</a> is an app for Android that can play tape files through the headphone output.</p>
@@ -10834,6 +11014,27 @@ If the offset value is such that scanning the screen memory to create the image 
 </table>
 </div>
 <div class="sect4">
+<h5 id="_1943">1943</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1943</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1943</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
 <h5 id="_atari_tetris">Atari Tetris</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -10850,6 +11051,98 @@ If the offset value is such that scanning the screen memory to create the image 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tetris</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">atetris</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bionic_commando">Bionic Commando</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bionic Commando</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bionicc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bad_dudes_vs_dragonninja">Bad Dudes Vs. DragonNinja</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bad Dudes Vs. DragonNinja</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">baddudes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Heavy Barrel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hbarrel</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_black_tiger">Black Tiger</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Black Tiger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">blktiger</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bubble_bobble">Bubble Bobble</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bubble Bobble</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bublbobl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tokio - Scramble Formation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tokiob</p></td>
 </tr>
 </tbody>
 </table>
@@ -11011,27 +11304,267 @@ If the offset value is such that scanning the screen memory to create the image 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cadillacs and Dinosaurs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dino.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dino</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Muscle Bomber Duo: Ultimate Team Battle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mbombrd.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mbombrd</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Saturday Night Slam Masters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">slammast.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">slammast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tenchi wo Kurau II_ Sekiheki no Tatakai</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wofch.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wofch</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Punisher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">punisher.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">punisher</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warriors of Fate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wof.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wof</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_capcom_play_system_2">Capcom Play System 2</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1944: The Loop Master</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1944</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19XX: The War Against Destiny</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19xx</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alien vs. Predator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avsp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Armored Warriors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">armwar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Battle Circuit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">batcir</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capcom Sports Club</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">csclub</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cyberbots: Fullmetal Madness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cybots</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Darkstalkers: The Night Warriors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dstlk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimahoo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dimahoo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dungeons &amp; Dragons: Shadow over Mystara</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddsom</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dungeons &amp; Dragons: Tower of Doom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddtod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eco Fighters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ecofghtr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Giga Wing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gigawing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper Street Fighter II: The Anniversary Edition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hsf2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Janpai Puzzle Choukou</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">choko</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jyangokushi: Haoh no Saihai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jyangoku</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mars Matrix: Hyper Solid Shooting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmatrix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marvel Super Heroes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marvel Super Heroes Vs. Street Fighter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mshvsf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marvel Vs. Capcom: Clash of Super Heroes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mvsc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mega Man 2: The Power Fighters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">megaman2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mighty! Pang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mpang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Night Warriors: Darkstalkers' Revenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nwarr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Progear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">progear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Puzz Loop 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pzloop2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz Nanairo Dreams: Nijiirochou no Kiseki</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qndream</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ring of Destruction: Slammasters II</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ringdest</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Street Fighter Alpha 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sfa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Street Fighter Alpha 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sfa2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Street Fighter Alpha: Warriors' Dreams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sfa3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Street Fighter Zero 2 Alpha</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sfz2al</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Super Gem Fighter Mini Mix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sgemf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Super Puzzle Fighter II Turbo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spf2t</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Super Street Fighter II Turbo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssf2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Super Street Fighter II: The New Challengers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssf2t</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vampire Hunter 2: Darkstalkers Revenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vhunt2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vampire Savior 2: The Lord of Vampire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vsav</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vampire Savior: The Lord of Vampire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vsav2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-Men Vs. Street Fighter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmvsf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-Men: Children of the Atom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmcota</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_combat_school">Combat School</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combat School</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combatsc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_commando">Commando</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Commando</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">commando</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_contra">Contra</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contra</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contra</p></td>
 </tr>
 </tbody>
 </table>
@@ -11052,7 +11585,175 @@ If the offset value is such that scanning the screen memory to create the image 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Double Dragon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double Dragon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddragon</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_double_dragon_2">Double Dragon 2</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double Dragon 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddragon2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_exed_exes">Exed Exes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exed Exes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exedexes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_f_1_dream">F-1 Dream</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F-1 Dream</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f1drm</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_ghosts_n_goblins">Ghosts 'n Goblins</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ghosts 'n Goblins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gng</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_gun_smoke">Gun.Smoke</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gun.Smoke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gunsmk</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_haunted_castle">Haunted Castle</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Haunted Castle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hcastle</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_hyper_dyne_side_arms">Hyper Dyne Side Arms</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper Dyne Side Arms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sidearms</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_karate_champ">Karate Champ</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Karate Champ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kchamp</p></td>
 </tr>
 </tbody>
 </table>
@@ -11073,7 +11774,90 @@ If the offset value is such that scanning the screen memory to create the image 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kicker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kicker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kicker</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_midnight_resistance">Midnight Resistance</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Midnight Resistance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">midres</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mikie">Mikie</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mikie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mikie</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_the_new_zealand_story">The New Zealand Story</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arkanoid - Revenge of DOH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arknoid2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dr. Toppel&#8217;s Adventure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">drtoppel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extermination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extrmatn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insector X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insectx</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kageki</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kageki</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The NewZealand Story</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tnzso</p></td>
 </tr>
 </tbody>
 </table>
@@ -11096,6 +11880,10 @@ If the offset value is such that scanning the screen memory to create the image 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Out Run</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Out Run</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outrun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turbo Out Run</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -11115,7 +11903,199 @@ If the offset value is such that scanning the screen memory to create the image 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Pang!</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pang</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_ping_pong">Ping-Pong</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konami&#8217;s Ping Pong</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pingpong</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_pirate_ship_higemaru">Pirate Ship Higemaru</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pirate Ship Higemaru</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">higemaru</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_rastan_saga">Rastan Saga</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rastan Saga</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rastan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_renegade">Renegade</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renegade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">renegdeb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_road_fighter">Road Fighter</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hyper Sports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hyperspt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Fighter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">roadf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_robocop">Robocop</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hippodrome</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hippodrm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Robocop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">robocop</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_rocn_rope">Roc&#8217;n Rope</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roc&#8217;n Rope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rocnrope</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_sega_system_16">Sega System 16</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action Fighter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">afighter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alex Kidd: The Lost Stars</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alexkidd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fantasy Zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fantzone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shinobi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shinobi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tetris</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tetris</p></td>
 </tr>
 </tbody>
 </table>
@@ -11136,103 +12116,296 @@ If the offset value is such that scanning the screen memory to create the image 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alien Syndrome</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aliensyn.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aliensyn</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Altered Beast</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">altbeast.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">altbeast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Aurail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aurail.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aurail</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bay Route</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bayroute.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bayroute</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bullet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bullet.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bullet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cotton</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cotton.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cotton</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dunk Shot</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dunkshot.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dunkshot</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dynamite Dux</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ddux.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ddux</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E-Swat - Cyber Police</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eswat.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eswat</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Excite League</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">exctleag.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exctleag</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fantasy Zone II - The Tears of Opa-Opa</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fantzn2x.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fantzn2x</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flash Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fpoint.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fpoint</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Golden Axe</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">goldnaxe.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">goldnaxe</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MVP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mvp.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mvp</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Passing Shot</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">passsht.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">passsht</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Riot City</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">riotcity.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">riotcity</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RyuKyu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ryukyu.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ryukyu</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sonic Boom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sonicbom.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sonicbom</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sukeban Jansi Ryuko</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sjryuko.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sjryuko</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Super League</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">suprleag.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">suprleag</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time Scanner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timescan.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timescan</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Toryumon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">toryumon.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">toryumon</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tough Turf</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tturfu.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tturfu</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wonder Boy III - Monster Lair</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wb3.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wb3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wrestle War</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wrestwar.rom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wrestwar</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_section_z">Section Z</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Section Z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sectionz</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_sly_spy">Sly Spy</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boulder Dash Part 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bouldash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sly Spy: Secret Agent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secretag</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_the_speed_rumbler">The Speed Rumbler</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Speed Rumbler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srumbler</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_super_hang_on">Super Hang-On</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Super Hang-On</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shangon</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tiger_road">Tiger Road</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tiger Road</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tigeroad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_trick_trap">Trick Trap</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trick Trap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tricktrp</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_trojan">Trojan</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trojan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trojanr</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_vigilante">Vigilante</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Game Name</th>
+<th class="tableblock halign-left valign-top">ROM Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vigilante</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vigilant</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_vulgus">Vulgus</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre Juego</th>
+<th class="tableblock halign-left valign-top">Nombre ROM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vulgus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vulgus</p></td>
 </tr>
 </tbody>
 </table>
@@ -11272,8 +12445,9 @@ If the offset value is such that scanning the screen memory to create the image 
 <pre class="rouge highlight"><code data-lang="shell">pacman <span class="nt">-S</span> libftdi</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_ft232h">FT232H</h5>
+</div>
+<div class="sect3">
+<h4 id="_ft232h">FT232H</h4>
 <div class="paragraph">
 <p>Download the <a href="https://github.com/vanbwodonk/ft2232hl-jtag-clone/tree/main/eeprom_binary">new firmware from Github</a>.</p>
 </div>
@@ -11336,7 +12510,6 @@ If the offset value is such that scanning the screen memory to create the image 
 </div>
 <div class="paragraph">
 <p>For OpenOCD use, download the configuration file from the <a href="https://github.com/zxtres/wiki/blob/main/Files/OpenOCD_0.10.0-11/FT2232H_FT232H.cfg">ZXTRES GitHub repository</a>, to the working directory (in the examples, <code>/home/zxtres/unbrick</code> or <code>/Users/zxtres/unbrick</code> for macOS).</p>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -11500,7 +12673,7 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0b<br>
-Last updated 2023-10-13 17:02:23 +0200
+Last updated 2023-11-14 17:42:36 +0100
 </div>
 </div>
 </body>
