@@ -740,7 +740,7 @@ pre.rouge {
 <h1>ZXTRES, ZXTRES+ and ZXTRES++ Manual</h1>
 <div class="details">
 <span id="author" class="author">EN</span><br>
-<span id="email" class="email">2023-12-24</span><br>
+<span id="email" class="email">2024-02-05</span><br>
 <span id="revnumber">version 1.0.0b</span>
 </div>
 <div id="toc" class="toc2">
@@ -752,7 +752,9 @@ pre.rouge {
 <li><a href="#_ports_and_connectors">Ports and connectors</a></li>
 <li><a href="#_initial_setup">Initial setup</a>
 <ul class="sectlevel3">
-<li><a href="#_microsd_card_formatting">microSD card formatting</a>
+<li><a href="#_first_boot">First boot</a></li>
+<li><a href="#_basic_microsd_card_creation_with_zx3_downloader">Basic microSD card creation with ZX3 Downloader</a></li>
+<li><a href="#_microsd_advanced_format">microSD advanced format</a>
 <ul class="sectlevel4">
 <li><a href="#_windows">Windows</a></li>
 <li><a href="#_macos">macOS</a></li>
@@ -1115,6 +1117,7 @@ pre.rouge {
 <ul class="sectlevel2">
 <li><a href="#_middle_board">Middle Board</a>
 <ul class="sectlevel3">
+<li><a href="#_usb_controller_calibration">USB controller calibration</a></li>
 <li><a href="#_upgrade_3">Upgrade</a></li>
 <li><a href="#_recovery_via_usb">Recovery via USB</a></li>
 </ul>
@@ -1519,7 +1522,365 @@ pre.rouge {
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
-<h4 id="_microsd_card_formatting">microSD card formatting</h4>
+<h4 id="_first_boot">First boot</h4>
+<div class="paragraph">
+<p>Befor you start, make sure that, at least, the power cable is connected, a video cable is also connected to a display, and a PS/2 keyboard is attached.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/QuickStartGuide3.png" alt="QuickStartGuide3"></span></p>
+</div>
+<div class="paragraph">
+<p>Turn the power switch on and check, looking at the display, that the system boots correctly.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/boot_zxtres.png" alt="boot zxtres"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_microsd_card_creation_with_zx3_downloader">Basic microSD card creation with ZX3 Downloader</h4>
+<div class="paragraph">
+<p>With the <a href="https://github.com/kounch/ZX3_Downloader">ZX3 Downloader</a> tool you can prepare a basic microSD card to use with ZXTRES. The latest version can be downloaded from here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/kounch/ZX3_Downloader/releases/latest" class="bare">https://github.com/kounch/ZX3_Downloader/releases/latest</a></p>
+</div>
+<div class="paragraph">
+<p>Make sure that the microSD card you want to use is in FAT32 format. Otherwise, you can use <a href="https://www.sdcard.org/downloads/formatter/">the official formatting tool of the SD Association</a>.</p>
+</div>
+<div class="paragraph">
+<p>Copy the <code>ZX3_Downloader…</code> file to a directory with enough free space (4.5GB, at least, if using the default options), and execute it, stating the kind of FPGA depending on the model (<code>a35t</code> for ZXTRES, <code>a100t</code> for ZXTRES+ or <code>a200t</code> for ZXTRES++).</p>
+</div>
+<div class="paragraph">
+<p>For example, for ZXTRES, on Windows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">...ZX3_Downloader.exe <span class="nt">-k</span> a35t</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same, but for ZXTRES+:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">...ZX3_Downloader.exe <span class="nt">-k</span> a100t</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or ZXTRES++:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">...ZX3_Downloader.exe <span class="nt">-k</span> a200t</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wait a few minutes, while all the content is downloaded and built.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/zx3downloader.png" alt="zx3downloader"></span></p>
+</div>
+<div class="paragraph">
+<p>Once the process finishes, if no errors appear, copy the content from the newly created <code>SD</code> directory to the root of the microSD card.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/sd_zxtres.png" alt="sd zxtres"></span></p>
+</div>
+<div class="paragraph">
+<p>If the download process was interrupted, it&#8217;s recommended to start again the tool, which will continue since the last failed file.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Make sure that the ZXTRES is turned off. Insert the microSD card and turn on again the power switch.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/QuickStartGuide4.png" alt="QuickStartGuide4"></span></p>
+</div>
+<div class="paragraph">
+<p>Now the FPGA will boot again with the default ZX Spectrum core, but this time, running <a href="https://spectrumcomputing.co.uk/forums/viewtopic.php?t=2553">Bob Fossil&#8217;s NMI Browser</a> and navigating automatically the microSD directory where all the core files are.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/QuickStartGuide5.png" alt="QuickStartGuide5"></span></p>
+</div>
+<div class="paragraph">
+<p>Use the cursor keys to move through the list, and press <code>Enter</code> to load the desired core. Please note that <code>.bit</code> core files can only be used with a ZXTRES with a middle board installed, while <code>.zx3</code> core files can always be used.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/QuickStartGuide6.png" alt="QuickStartGuide6"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>After a few seconds, the desired core will activate in the FPGA, ready to use.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/QuickStartGuide7.png" alt="QuickStartGuide7"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_microsd_advanced_format">microSD advanced format</h4>
+<div class="paragraph">
+<p>Depending which cores you want to use, and the operating system used, the requirements and possibilities for formatting (and partitioning) the microSD card may vary.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>FAT16 partitions have a maximum size of 4GB.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When naming a partition to be used with esxDOS you can&#8217;t also use it as a folder name on that partitio. Otherwise an error occurs when trying to access the contents (don&#8217;t name the partition as <code>BIN</code> <code>SYS</code> or <code>TMP</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The ZX Spectrum core can also have <a href="#_microsd_advanced_format_3e">the first partition in +3DOS format and then the second one in FAT16 or FAT32 format</a> to use with the +3e ROM.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="sect4">
+<h5 id="_windows">Windows</h5>
+<div class="paragraph">
+<p>For simple configuration of microSD cards of the correct size (2GB or less for FAT16 or 32GB or less for FAT32) you can use <a href="https://www.sdcard.org/downloads/formatter/">the official formatting tool of the SD Association</a>.</p>
+</div>
+<div class="paragraph">
+<p>For other more complex configurations and depending on operating system version you can use the command line tool <code>diskpart</code> or the Windows Disk Management GUI.</p>
+</div>
+<div class="paragraph">
+<p>For example, to format a microSD card shown as disk 6 when executing <code>list disk</code> from <code>diskpart</code> with only one FAT16 partition (if the microSD card size is less than 4GB):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>select disk 6
+clean
+create part primary
+active
+format FS=FAT label=ZXTRES
+exit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create two FAT16 partitions (for example to use MSX core) and have the rest of space as another FAT32 partition (for microSD cards more than 8GB in size):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>select disk 6
+clean
+create part primary size=4000
+set id=06
+active
+format fs=FAT label=ZXTRES quick
+create part primary size=4000
+format fs=FAT label=EXTRA quick
+create part primary
+format fs=FAT32 label=DATA quick
+exit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create one FAT32 4GB partition (for example to use with Amstrad CPC 6128 core) and then have the rest of space available as a second FAT32 partition (for microSD cards more than 4GB in size):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>select disk 6
+clean
+create part primary size=4000
+set id=0b
+active
+format fs=FAT32 label=ZXTRES unit=4k quick
+create part primary
+format fs=FAT32 label=EXTRA quick
+exit</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect4">
+<h5 id="_macos">macOS</h5>
+<div class="paragraph">
+<p>For simple configuration of microSD cards of the correct size (2GB or less for FAT16 or 32GB or less for FAT32) you can use <a href="https://www.sdcard.org/downloads/formatter/">the official formatting tool of the SD Association</a> or Disk Utility which is included with the operating system.</p>
+</div>
+<div class="paragraph">
+<p>In other case you should use the command line.</p>
+</div>
+<div class="paragraph">
+<p>For example, to format a microSD card shown as <code>disk6</code> with only one FAT16 partition (if the microSD card size is less than 2GB):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
+diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT16"</span> ZXTRES R</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To split it into two FAT16 partitions of the same size (if the microSD card size is 4GB or less):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
+diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT16"</span> ZXTRES 50% <span class="s2">"MS-DOS FAT16"</span> EXTRA 50%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create two FAT16 partitions (for example to use MSX core) and have the rest of space as another FAT32 partition (for microSD cards more than 8GB in size):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
+diskutil partitionDisk /dev/disk6 MBR %DOS_FAT_16% ZXTRES 4G %DOS_FAT_16% EXTRA 4G <span class="s2">"MS-DOS FAT32"</span> DATA R
+<span class="nb">sudo </span>newfs_msdos <span class="nt">-F</span> 16 <span class="nt">-v</span> ZXTRES <span class="nt">-c</span> 128 /dev/rdisk6s1
+<span class="nb">sudo </span>newfs_msdos <span class="nt">-F</span> 16 <span class="nt">-v</span> EXTRA <span class="nt">-b</span> 4096 <span class="nt">-c</span> 128 /dev/rdisk6s2</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>diskutil</code> can&#8217;t create FAT16 partitions that are bigger than 2GB and then format them. That&#8217;s why in this example you must format them only after creating the partitions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>To create one FAT32 4GB partition (for example to use with the Amstrad CPC 6128 core) and then make the rest of space available as a second FAT32 partition (for microSD cards of more than 4GB):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
+diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT32"</span> ZXTRES 4G <span class="s2">"MS-DOS FAT32"</span> EXTRA R</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In this example because the partition has a size of exactly 4GB, macOS uses a cluster size of 4096 bytes which is the one required for the Amstrad CPC 6128 core. For a smaller size you may need to format the first partition again. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
+newfs_msdos <span class="nt">-F</span> 32 <span class="nt">-v</span> ZXTRES <span class="nt">-b</span> 4096 /dev/rdisk6s1</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The Spotlight feature in macOS enables you to search the items on the microSD card creating a number of hidden files. You can switch off the indexing with these commands (assuming that the SD partition is called <code>ZXTRES</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell">mdutil <span class="nt">-i</span> off /Volumes/ZXTRES
+<span class="nb">cd</span> /Volumes/ZXTRES
+<span class="nb">rm</span> <span class="nt">-rf</span> .<span class="o">{</span>,_.<span class="o">}{</span>fseventsd,Spotlight-V<span class="se">\*</span>,Trashes<span class="o">}</span>
+<span class="nb">mkdir</span> .fseventsd
+<span class="nb">touch</span> .fseventsd/no_log .metadata_never_index .Trashes
+<span class="nb">cd</span> -</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect4">
+<h5 id="_linux">Linux</h5>
+<div class="paragraph">
+<p>There are many tools for Linux that can format or partition a microSD card (<code>fdisk</code> <code>parted</code> <code>cfdisk</code> <code>sfdisk</code> or <code>GParted</code> to name a few). Note that the partition scheme must always be MBR and the first partition (the one to be used for esxDOS) must be the primary partition.</p>
+</div>
+<div class="paragraph">
+<p>For example to format a microSD card shown as <code>sdc</code> with only one FAT16 partition (if the microSD card size is less than 4GB):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>fdisk <span class="nt">--compatibility</span><span class="o">=</span>dos /dev/sdc</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>(...)
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (62-31116288, default 62):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (128-31116288, default 31116288):
+Created a new partition 1 of type 'Linux'
+
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list all codes): 6
+Changed type of partition 'Linux' to 'FAT16'.
+
+Command (m for help): a
+Partition number (1, default 1): 1
+The bootable flag on partition 1 is enabled now.
+
+Command (m for help): p
+Disk /dev/sdc
+Disklabel type: dos
+Disk identifier
+
+Device     Boot   Start     End  Sectors   Size Id Type
+/dev/sdc1           62 31116288  31116288 984,9M 6 FAT16</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Format a FAT partition (requires root permission):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>mkfs.fat <span class="nt">-F</span> 16 <span class="nt">-n</span> ZXTRES <span class="nt">-s</span> 128 /dev/sdc1</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p>This table shows the requirements of cores that use the microSD card.</p>
 </div>
@@ -1947,265 +2308,6 @@ pre.rouge {
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>FAT16 partitions have a maximum size of 4GB.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When naming a partition to be used with esxDOS you can&#8217;t also use it as a folder name on that partitio. Otherwise an error occurs when trying to access the contents (don&#8217;t name the partition as <code>BIN</code> <code>SYS</code> or <code>TMP</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The ZX Spectrum core can also have <a href="#_microsd_advanced_format_3e">the first partition in +3DOS format and then the second one in FAT16 or FAT32 format</a> to use with the +3e ROM.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
-<div class="sect4">
-<h5 id="_windows">Windows</h5>
-<div class="paragraph">
-<p>For simple configuration of microSD cards of the correct size (2GB or less for FAT16 or 32GB or less for FAT32) you can use <a href="https://www.sdcard.org/downloads/formatter/">the official formatting tool of the SD Association</a>.</p>
-</div>
-<div class="paragraph">
-<p>For other more complex configurations and depending on operating system version you can use the command line tool <code>diskpart</code> or the Windows Disk Management GUI.</p>
-</div>
-<div class="paragraph">
-<p>For example, to format a microSD card shown as disk 6 when executing <code>list disk</code> from <code>diskpart</code> with only one FAT16 partition (if the microSD card size is less than 4GB):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code>select disk 6
-clean
-create part primary
-active
-format FS=FAT label=ZXTRES
-exit</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create two FAT16 partitions (for example to use MSX core) and have the rest of space as another FAT32 partition (for microSD cards more than 8GB in size):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code>select disk 6
-clean
-create part primary size=4000
-set id=06
-active
-format fs=FAT label=ZXTRES quick
-create part primary size=4000
-format fs=FAT label=EXTRA quick
-create part primary
-format fs=FAT32 label=DATA quick
-exit</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create one FAT32 4GB partition (for example to use with Amstrad CPC 6128 core) and then have the rest of space available as a second FAT32 partition (for microSD cards more than 4GB in size):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code>select disk 6
-clean
-create part primary size=4000
-set id=0b
-active
-format fs=FAT32 label=ZXTRES unit=4k quick
-create part primary
-format fs=FAT32 label=EXTRA quick
-exit</code></pre>
-</div>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-<div class="sect4">
-<h5 id="_macos">macOS</h5>
-<div class="paragraph">
-<p>For simple configuration of microSD cards of the correct size (2GB or less for FAT16 or 32GB or less for FAT32) you can use <a href="https://www.sdcard.org/downloads/formatter/">the official formatting tool of the SD Association</a> or Disk Utility which is included with the operating system.</p>
-</div>
-<div class="paragraph">
-<p>In other case you should use the command line.</p>
-</div>
-<div class="paragraph">
-<p>For example, to format a microSD card shown as <code>disk6</code> with only one FAT16 partition (if the microSD card size is less than 2GB):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT16"</span> ZXTRES R</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To split it into two FAT16 partitions of the same size (if the microSD card size is 4GB or less):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT16"</span> ZXTRES 50% <span class="s2">"MS-DOS FAT16"</span> EXTRA 50%</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To create two FAT16 partitions (for example to use MSX core) and have the rest of space as another FAT32 partition (for microSD cards more than 8GB in size):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR %DOS_FAT_16% ZXTRES 4G %DOS_FAT_16% EXTRA 4G <span class="s2">"MS-DOS FAT32"</span> DATA R
-<span class="nb">sudo </span>newfs_msdos <span class="nt">-F</span> 16 <span class="nt">-v</span> ZXTRES <span class="nt">-c</span> 128 /dev/rdisk6s1
-<span class="nb">sudo </span>newfs_msdos <span class="nt">-F</span> 16 <span class="nt">-v</span> EXTRA <span class="nt">-b</span> 4096 <span class="nt">-c</span> 128 /dev/rdisk6s2</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code>diskutil</code> can&#8217;t create FAT16 partitions that are bigger than 2GB and then format them. That&#8217;s why in this example you must format them only after creating the partitions.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
-<div class="paragraph">
-<p>To create one FAT32 4GB partition (for example to use with the Amstrad CPC 6128 core) and then make the rest of space available as a second FAT32 partition (for microSD cards of more than 4GB):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
-diskutil partitionDisk /dev/disk6 MBR <span class="s2">"MS-DOS FAT32"</span> ZXTRES 4G <span class="s2">"MS-DOS FAT32"</span> EXTRA R</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>In this example because the partition has a size of exactly 4GB, macOS uses a cluster size of 4096 bytes which is the one required for the Amstrad CPC 6128 core. For a smaller size you may need to format the first partition again. For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">diskutil unmountDisk /dev/disk6
-newfs_msdos <span class="nt">-F</span> 32 <span class="nt">-v</span> ZXTRES <span class="nt">-b</span> 4096 /dev/rdisk6s1</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Spotlight feature in macOS enables you to search the items on the microSD card creating a number of hidden files. You can switch off the indexing with these commands (assuming that the SD partition is called <code>ZXTRES</code>):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell">mdutil <span class="nt">-i</span> off /Volumes/ZXTRES
-<span class="nb">cd</span> /Volumes/ZXTRES
-<span class="nb">rm</span> <span class="nt">-rf</span> .<span class="o">{</span>,_.<span class="o">}{</span>fseventsd,Spotlight-V<span class="se">\*</span>,Trashes<span class="o">}</span>
-<span class="nb">mkdir</span> .fseventsd
-<span class="nb">touch</span> .fseventsd/no_log .metadata_never_index .Trashes
-<span class="nb">cd</span> -</code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-<div class="sect4">
-<h5 id="_linux">Linux</h5>
-<div class="paragraph">
-<p>There are many tools for Linux that can format or partition a microSD card (<code>fdisk</code> <code>parted</code> <code>cfdisk</code> <code>sfdisk</code> or <code>GParted</code> to name a few). Note that the partition scheme must always be MBR and the first partition (the one to be used for esxDOS) must be the primary partition.</p>
-</div>
-<div class="paragraph">
-<p>For example to format a microSD card shown as <code>sdc</code> with only one FAT16 partition (if the microSD card size is less than 4GB):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>fdisk <span class="nt">--compatibility</span><span class="o">=</span>dos /dev/sdc</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code>(...)
-Command (m for help): n
-Partition type
-   p   primary (0 primary, 0 extended, 4 free)
-   e   extended (container for logical partitions)
-Select (default p): p
-Partition number (1-4, default 1): 1
-First sector (62-31116288, default 62):
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (128-31116288, default 31116288):
-Created a new partition 1 of type 'Linux'
-
-Command (m for help): t
-Selected partition 1
-Hex code (type L to list all codes): 6
-Changed type of partition 'Linux' to 'FAT16'.
-
-Command (m for help): a
-Partition number (1, default 1): 1
-The bootable flag on partition 1 is enabled now.
-
-Command (m for help): p
-Disk /dev/sdc
-Disklabel type: dos
-Disk identifier
-
-Device     Boot   Start     End  Sectors   Size Id Type
-/dev/sdc1           62 31116288  31116288 984,9M 6 FAT16</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Format a FAT partition (requires root permission):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>mkfs.fat <span class="nt">-F</span> 16 <span class="nt">-n</span> ZXTRES <span class="nt">-s</span> 128 /dev/sdc1</code></pre>
-</div>
-</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -7762,6 +7864,54 @@ CHROMA81: Enabled.</p>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
+<h4 id="_usb_controller_calibration">USB controller calibration</h4>
+<div class="paragraph">
+<p>Some USB controllers work directly after being plugged in. For those that do not, a calibration process is needed.</p>
+</div>
+<div class="paragraph">
+<p>Copy the tape image file <code>MBJOYCAL.TAP</code> to the microSD card, and load it with the default Spectrum core, making sure that only one controller is connected. The program will start and put the intermediate board in a mode where it can talk directly to the controller interface.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mbjoy1.png" alt="mbjoy1"></span></p>
+</div>
+<div class="paragraph">
+<p>Once the controller connection is active, a screen will appear where you can check all the controls. If they are not right, you can press <code>C</code> to enter calibration mode.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mbjoy2.png" alt="mbjoy2"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>In calibration mode, you must follow these steps for each button:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>hold down the asked button on the remote control</p>
+</li>
+<li>
+<p>press any key on the kyeboard to confirm the button push</p>
+</li>
+<li>
+<p>release the button on the controller</p>
+</li>
+<li>
+<p>press again on the keyboard for final confirmation</p>
+</li>
+</ol>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mbjoy3.png" alt="mbjoy3"></span></p>
+</div>
+<div class="paragraph">
+<p>Once the button calibration is complete, you can check that everything is correct and press <code>Q</code> to exit the application and save the configuration. If needed, you can press <code>R</code> to restart the whole process.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mbjoy4.png" alt="mbjoy4"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect3">
 <h4 id="_upgrade_3">Upgrade</h4>
 <div class="paragraph">
 <p>Middle Board firmware updates are usually distributed in archives with a name like rp2mb-rXXupg.zip.</p>
@@ -12963,7 +13113,7 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0b<br>
-Last updated 2023-12-24 11:32:42 +0100
+Last updated 2024-02-05 12:22:45 +0100
 </div>
 </div>
 </body>
