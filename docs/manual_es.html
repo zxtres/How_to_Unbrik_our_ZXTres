@@ -740,7 +740,7 @@ pre.rouge {
 <h1>Manual de ZXTRES, ZXTRES+ y ZXTRES++</h1>
 <div class="details">
 <span id="author" class="author">ES</span><br>
-<span id="email" class="email">2024-02-05</span><br>
+<span id="email" class="email">2024-04-20</span><br>
 <span id="revnumber">versión 1.0.0b</span>
 </div>
 <div id="toc" class="toc2">
@@ -782,7 +782,8 @@ pre.rouge {
 </li>
 </ul>
 </li>
-<li><a href="#_zx_spectrum">ZX Spectrum</a>
+<li><a href="#_modo_mist">Modo Mist</a></li>
+<li><a href="#_modo_tradicional_zx_spectrum">Modo tradicional (ZX Spectrum)</a>
 <ul class="sectlevel2">
 <li><a href="#_roms_2">ROMs</a>
 <ul class="sectlevel3">
@@ -846,7 +847,7 @@ pre.rouge {
 <li><a href="#_memoria_flash">Memoria Flash</a></li>
 </ul>
 </li>
-<li><a href="#_otros_cores">Otros cores</a>
+<li><a href="#_otros_cores_modo_tradicional">Otros cores (Modo tradicional)</a>
 <ul class="sectlevel2">
 <li><a href="#_amiga_minimig_aga">Amiga minimig AGA</a>
 <ul class="sectlevel3">
@@ -1553,6 +1554,49 @@ pre.rouge {
 </li>
 </ul>
 </li>
+<li><a href="#_otros_cores_modo_mist">Otros cores (Modo Mist)</a>
+<ul class="sectlevel2">
+<li><a href="#_menú">Menú</a>
+<ul class="sectlevel3">
+<li><a href="#_configuración_avanzada">Configuración avanzada</a></li>
+</ul>
+</li>
+<li><a href="#_zxtres">ZXTRES</a></li>
+<li><a href="#_sinclair_ql">Sinclair QL</a>
+<ul class="sectlevel3">
+<li><a href="#_formato_de_tarjeta_microsd_64">Formato de Tarjeta microSD</a></li>
+<li><a href="#_teclado_66">Teclado</a>
+<ul class="sectlevel4">
+<li><a href="#_teclas_especiales_y_botones_66">Teclas especiales y botones</a></li>
+</ul>
+</li>
+<li><a href="#_guía_básica_65">Guía básica</a></li>
+</ul>
+</li>
+<li><a href="#_spectrum">Spectrum</a>
+<ul class="sectlevel3">
+<li><a href="#_formato_de_tarjeta_microsd_65">Formato de Tarjeta microSD</a></li>
+<li><a href="#_teclado_67">Teclado</a>
+<ul class="sectlevel4">
+<li><a href="#_teclas_especiales_y_botones_67">Teclas especiales y botones</a></li>
+</ul>
+</li>
+<li><a href="#_guía_básica_66">Guía básica</a></li>
+</ul>
+</li>
+<li><a href="#_zx_spectrum">ZX Spectrum</a>
+<ul class="sectlevel3">
+<li><a href="#_formato_de_tarjeta_microsd_66">Formato de Tarjeta microSD</a></li>
+<li><a href="#_teclado_68">Teclado</a>
+<ul class="sectlevel4">
+<li><a href="#_teclas_especiales_y_botones_68">Teclas especiales y botones</a></li>
+</ul>
+</li>
+<li><a href="#_guía_básica_67">Guía básica</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_otro_hardware">Otro Hardware</a>
 <ul class="sectlevel2">
 <li><a href="#_tarjeta_intermedia_middle_board">Tarjeta intermedia (Middle Board)</a>
@@ -1607,7 +1651,7 @@ pre.rouge {
 <li><a href="#_referencias">Referencias</a>
 <ul class="sectlevel2">
 <li><a href="#_características_técnicas">Características Técnicas</a></li>
-<li><a href="#_spectrum">Spectrum</a>
+<li><a href="#_spectrum_2">Spectrum</a>
 <ul class="sectlevel3">
 <li><a href="#_scan_codes">Scan Codes</a></li>
 <li><a href="#_registros_es_para_control_de_zxtres">Registros E/S para control de ZXTRES</a>
@@ -2038,13 +2082,13 @@ pre.rouge {
 <p><span class="image"><img src="img/QuickStartGuide4.png" alt="QuickStartGuide4"></span></p>
 </div>
 <div class="paragraph">
-<p>Ahora se iniciará de nuevo la FPGA con el core por defecto de ZX Spectrum, pero esta vez, activando el <a href="https://spectrumcomputing.co.uk/forums/viewtopic.php?t=2553">navegador NMI de Bob Fossil</a> y accediendo al directorio de la microSD donde están los ficheros de core.</p>
+<p>Ahora se iniciará de nuevo la FPGA, bien en modo tradicional con el core por defecto de ZX Spectrum, pero esta vez, activando el <a href="https://spectrumcomputing.co.uk/forums/viewtopic.php?t=2553">navegador NMI de Bob Fossil</a>, o bien en <a href="#_modo_mist">modo Mist</a> con el core por defecto, y accediendo al directorio de la microSD donde están los ficheros de core.</p>
 </div>
 <div class="paragraph text-center">
-<p><span class="image"><img src="img/QuickStartGuide5.png" alt="QuickStartGuide5"></span></p>
+<p><span class="image"><img src="img/QuickStartGuide5.png" alt="QuickStartGuide5"></span>  <span class="image"><img src="img/mist.png" alt="mist"></span></p>
 </div>
 <div class="paragraph">
-<p>Utilizar las teclas de cursor para desplazarse por la lista, y pulsar <code>Enter</code> para cargar el core deseado. Notar que los ficheros de core <code>.bit</code> sólo se pueden usar en ZXTRES que dispongan de una tarjeta intermedia. Los ficheros de core <code>.zx3</code> se pueden usar siempre.</p>
+<p>Utilizar las teclas de cursor para desplazarse por la lista, y pulsar <code>Enter</code> para cargar el core deseado. Notar que los ficheros de core <code>.bit</code> y el <a href="#_modo_mist">modo Mist</a> sólo se pueden usar en ZXTRES que dispongan de una <a href="#_tarjeta_intermedia_middle_board">tarjeta intermedia</a> con firmware versión 02.02 o superior. Los ficheros de core <code>.zx3</code> se pueden usar siempre desde el modo tradicional con el core de ZX Spectrum por defecto.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="img/QuickStartGuide6.png" alt="QuickStartGuide6"></span></p>
@@ -3135,10 +3179,34 @@ zxunocfg</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_zx_spectrum">ZX Spectrum</h2>
+<h2 id="_modo_mist">Modo Mist</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>El core principal es el que implementa un ordenador ZX Spectrum. Este core es especial, y no se puede sustituir por otro que no sea de ZX Spectrum, ya que el ZXTRES lo utiliza para su funcionamiento.</p>
+<p>Aunque el modo de arranque tradicional de ZXTRES es con el core principal es el de <a href="#_modo_tradicional_zx_spectrum">ZX Spectrum</a>, tal y como funcionaban modelos anteriores de la familia (ZX-Uno, ZXDOS, etc.), los ZXTRES con <a href="#_tarjeta_intermedia_middle_board">tarjeta intermedia</a> con una versión de firmware 02.02 o superior pueden arrancar por defecto en otro modo llamado Mist.</p>
+</div>
+<div class="paragraph">
+<p>El modo Mist se basa en que la tarjeta intermedia contenga una versión adaptada del firmware que utiliza el microcontrolador de otra familia de FPGAs (MiST, MiSTica y SiDi).  Este microcntrolador se utiliza para inicializar la FPGA en el arranque cargando el core por defecto. Luego, una vez que la FPGA está en marcha, el microcontrolador actúa como un chip de soporte y permite implementar en software algunas cosas que sean difíciles de implementar dentro de la FPGA.</p>
+</div>
+<div class="paragraph">
+<p>La ventaja de utilizar una versión adaptada del firmware de Mist es que simplifica adaptar (portar) cores ya desarrollados para otras FPGAs para que funcionen también en ZXTRES.</p>
+</div>
+<div class="paragraph">
+<p>Para que se inicie en modo Mist, debe existir en la raíz de la tarjeta microSD un directorio llamado <code>mist</code> y en su interior, al menos un fichero de core por defecto, llamado <code>core.bit</code> y, opcionalmente, un fichero de configuración llamado <code>mist.ini</code>. También se pueden dejar otros ficheros <code>.bit</code> de core, tanto tradicionales como de modo Mist.</p>
+</div>
+<div class="paragraph">
+<p><a href="#_menú">Véase más adelante</a> para más detalles sobre los distintos cores que utilizan el modo Mist.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist.png" alt="mist"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modo_tradicional_zx_spectrum">Modo tradicional (ZX Spectrum)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El modo tradicional de arranque tiene como core principal el que implementa un ordenador ZX Spectrum. Este core es especial, y no se puede sustituir por otro que no sea de ZX Spectrum, ya que el ZXTRES fue originalmente diseñado para utilizar para su funcionamiento.</p>
 </div>
 <div class="paragraph">
 <p>Estas son algunas de sus principales características:</p>
@@ -4889,7 +4957,7 @@ NEW DATA "Utils",8</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_otros_cores">Otros cores</h2>
+<h2 id="_otros_cores_modo_tradicional">Otros cores (Modo tradicional)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Como se ha explicado anteriormente, es posible utilizar otros <a href="#_cores">cores</a> además del de ZX Spectrum por defecto.</p>
@@ -4902,7 +4970,7 @@ NEW DATA "Utils",8</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Muchos de los cores muestran las entradas de archivos y directorios en el orden de la tabla FAT interna de la tarjeta microSD, y no de manera alfabética. Si se desea ver esta información ordenada, se debe reorganizar la estructura de la tarjeta con una utilidad como FAT Sorter para Windows, <a href="https://fatsort.sourceforge.io/">FATsort</a> para Linux y macOS, <a href="https://www.luisrios.eti.br/public/en_us/projects/yafs/">YAFS</a>, <a href="http://www.trustfm.net/software/utilities/SDSorter.phpp">SDSorter</a> u otros.</p>
+<p>Muchos de los cores de modo tradicional muestran las entradas de archivos y directorios en el orden de la tabla FAT interna de la tarjeta microSD, y no de manera alfabética. Si se desea ver esta información ordenada, se debe reorganizar la estructura de la tarjeta con una utilidad como FAT Sorter para Windows, <a href="https://fatsort.sourceforge.io/">FATsort</a> para Linux y macOS, <a href="https://www.luisrios.eti.br/public/en_us/projects/yafs/">YAFS</a>, <a href="http://www.trustfm.net/software/utilities/SDSorter.phpp">SDSorter</a> u otros.</p>
 </div>
 </td>
 </tr>
@@ -14229,6 +14297,420 @@ CHROMA81: enabled</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_otros_cores_modo_mist">Otros cores (Modo Mist)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Como se <a href="#_modo_mist">ha explicado anteriormente</a>, los cores de modo Mist, requieren una <a href="#_tarjeta_intermedia_middle_board">tarjeta intermedia</a> con una versión de firmware 02.02 o superior incluyendo una versión adaptada del firmware que utiliza el microcontrolador de MiST, MiSTica y SiDi.</p>
+</div>
+<div class="sect2">
+<h3 id="_menú">Menú</h3>
+<div class="paragraph">
+<p>Normalmente cuando se inicia la FPGA en modo Mist el core por defecto es el menú de carga de cores, que accede al contenido del directorio <code>mist</code> y muestra los nombres de todos los ficheros <code>.bit</code> que encuentre en su interior.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist.png" alt="mist"></span></p>
+</div>
+<div class="paragraph">
+<p>Se pueden utilizar las teclas de cursor para desplazarse por la lista, y pulsar <code>Enter</code> para cargar el core deseado.</p>
+</div>
+<div class="paragraph">
+<p>Pulsando la tecla <code>F12</code> se accede a los menús de configuración del core por defecto. Estos están formados por dos pantallas principales, que se pueden alternar usando las teclas de cursor izquierda y derecha.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist01.png" alt="mist01"></span>  <span class="image"><img src="img/mist02.png" alt="mist02"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="sect3">
+<h4 id="_configuración_avanzada">Configuración avanzada</h4>
+<div class="paragraph">
+<p>Se puede crear un fichero de configuración llamado <code>mist.ini</code>, dentro del directorio <code>mist</code> en la raíz de la tarjeta microSD, con el siguinte formato:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ini"><span class="nn">[mist]</span>
+<span class="py">opcion1</span><span class="p">=</span><span class="s">valor1</span>
+<span class="py">opcion2</span><span class="p">=</span><span class="s">valor2</span>
+<span class="err">(...)</span>
+
+<span class="nn">[nombredecore1]</span>
+<span class="py">opcion1core1</span><span class="p">=</span><span class="s">valor1core1</span>
+<span class="err">(...)</span>
+
+<span class="nn">[nombredecore2]</span>
+<span class="err">(...)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Las opciones y valores introducidos tras <code>[mist]</code> se aplicarán en general a todos los cores que los soporten. Estas son algunas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>scandoubler_disable</code>: Con valor 1, algunos cordes desactivaránn scandoubler para producir una señal de vídeo de 15 kHz. Necesario para utilizar un cable VGA a SCART.</p>
+</li>
+<li>
+<p><code>csync_disable</code>: Por defecto, en el modo de 15 kHz, se produce una señal de sincronización compuesta en el pin 13 (Hsync) y un nivel alto constante en el pin 14. Algunos monitores antiguos compatibles con vídeo a 15 kHz no funcionan correctamente así, y necesitan HSync y VSync separados, lo que se activa poniendo el valor 1 en esta opción.</p>
+</li>
+<li>
+<p><code>key_menu_as_rgui</code>: Cuando el valor es 1, camiba la tecla del Menú ('F12') por la tecla derecha de menú . Opción para teclados pequeños sin teclas de función.</p>
+</li>
+<li>
+<p><code>ypbpr</code>:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>El resto de opciones se pueden consultar en la <a href="https://github.com/mist-devel/mist-board/wiki/DocIni">documentación oficial de Mist</a>. Notar que no todas las opciones son aplicables en el caso de ZXTRES.</p>
+</div>
+<div class="paragraph">
+<p>Se pueden indicar también particularmente para cada core concreto, usando el nombre adecuado para cada uno de ellos, según la siguiente tabla</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Core</th>
+<th class="tableblock halign-left valign-top">Cabecera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sinclair QL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ql</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ZX Spectrum 128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[spectrum]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>También es posible cambiar el tipo de letra (fuente) a utilizar en los menús de Mist, guardando en el directorio <code>mist</code> un fichero llamado <code>system.fnt</code> conteniendo una fuente 8x8, y con un tamaño de 768 bytes (caracteres ASCII 32-127) o 1024 bytes (caracteres ASCII 0-127). Se pueden obtener ficheros <code>.fnt</code> desde el repositorio oficial <a href="https://github.com/MiSTer-devel/Fonts_MiSTer/blob/master/README.md">Fonts_MiSTer</a>.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zxtres">ZXTRES</h3>
+<div class="paragraph">
+<p>Cargar este core desde el modo Mist hace que la FPGA inicie en <a href="#_modo_tradicional_zx_spectrum">modo tradicional</a> la <a href="#_bios">BIOS</a> y el core de ZX Spectrum</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/boot_zxtres.png" alt="boot zxtres"></span></p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect2">
+<h3 id="_sinclair_ql">Sinclair QL</h3>
+<div class="paragraph">
+<p>El <a href="https://es.wikipedia.org/wiki/Sinclair_QL">Sinclair QL</a>, fue un ordenador personal lanzado por Sinclair Research entre enero de 1984 y 1986. Posterior ZX Spectrum, se diseñó orientado a las aplicaciones domésticas y la pequeña empresa.</p>
+</div>
+<div class="paragraph">
+<p>La versión adaptada de Mist tiene las siguientes características:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Carga de ROM desde microSD</p>
+</li>
+<li>
+<p>Soporte para imágenes de <a href="https://es.wikipedia.org/wiki/ZX_Microdrive">ZX Microdrive</a></p>
+</li>
+<li>
+<p>Autoarranque desde Microdrive</p>
+</li>
+<li>
+<p>Velocidad ajustable</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_formato_de_tarjeta_microsd_64">Formato de Tarjeta microSD</h4>
+<div class="paragraph">
+<p>Se necesita, al menos, un fichero <code>ql.rom</code> con una ROM de Sinclair QL dentro del directorio <code>mist</code>. Además, se pueden utilizar ficheros de imágenes de Microdrive (ficheros <code>.mdv</code>) con formato QLAY, dejándolos dentro del subdirectrio <code>QL</code> en el directorio <code>mist</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_teclado_66">Teclado</h4>
+<div class="paragraph">
+<p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
+</div>
+<div class="sect4">
+<h5 id="_teclas_especiales_y_botones_66">Teclas especiales y botones</h5>
+<div class="paragraph">
+<p>Durante la ejecución del core:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>F12</code>: Mostrar y ocultar el menú de ajustes del core</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_guía_básica_65">Guía básica</h4>
+<div class="paragraph">
+<p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist_ql.png" alt="mist ql"></span></p>
+</div>
+<div class="paragraph">
+<p>Estas son las principales:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Load MDV1</code>: Para cargar un fichero de imagen en el lector de Microdrive 1</p>
+</li>
+<li>
+<p><code>Load MDV2</code>: Para cargar un fichero de imagen en el lector de Microdrive 2</p>
+</li>
+<li>
+<p><code>Load *.ROM</code>: Para cargar un fichero .rom de Sinclair QL</p>
+</li>
+<li>
+<p><code>Speed</code>: Para modificar la velocidad del core</p>
+</li>
+<li>
+<p><code>RAM</code>: Para modificar la cantidad de RAM del core</p>
+</li>
+<li>
+<p><code>Video Mode</code>: Para cambiar el modo de vídeo entre PAL y NTSC</p>
+</li>
+<li>
+<p><code>Scanlines</code>: Para activar, ajustar o desactivar líneas de exploración (Scanlines)</p>
+</li>
+<li>
+<p><code>Reset</code>: Para reiniciar el core</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spectrum">Spectrum</h3>
+<div class="paragraph">
+<p>Este core es un ejemplo sencillo de core de Mist adaptado a ZXTRES.</p>
+</div>
+<div class="sect3">
+<h4 id="_formato_de_tarjeta_microsd_65">Formato de Tarjeta microSD</h4>
+<div class="paragraph">
+<p>Este core no utiliza la microSD.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_teclado_67">Teclado</h4>
+<div class="paragraph">
+<p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
+</div>
+<div class="sect4">
+<h5 id="_teclas_especiales_y_botones_67">Teclas especiales y botones</h5>
+<div class="paragraph">
+<p>Durante la ejecución del core:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>F12</code>: Mostrar y ocultar el menú de ajustes del core</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_guía_básica_66">Guía básica</h4>
+<div class="paragraph">
+<p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist_spectrum.png" alt="mist spectrum"></span></p>
+</div>
+<div class="paragraph">
+<p>Estas son las principales:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Load CSW</code>: Carga de cinta desde un fichero CSW</p>
+</li>
+<li>
+<p><code>Reset</code>:  Reiniciar el core</p>
+</li>
+<li>
+<p><code>Trigger NMI</code>: Activar una interrupción no enmascarable</p>
+</li>
+<li>
+<p><code>Scanlines</code>:  Activar o desactivar el efecto de líneas de exploración</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zx_spectrum">ZX Spectrum</h3>
+<div class="paragraph">
+<p>Este core es una adaptación del <a href="https://github.com/sorgelig/ZX_Spectrum-128K_MIST">core original para Mist</a>.</p>
+</div>
+<div class="paragraph">
+<p>En este proyecto se han utilizado algunos modelos verilog del núcleo Till Harbaum Spectrum.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ZX Spectrum 48K, 128K, +3 y Pentagon 128 completamente funcionales con timings de CPU y Video correctos.</p>
+</li>
+<li>
+<p>Interfaces de memoria Pentagon 1024K y Profi 1024K.</p>
+</li>
+<li>
+<p>Turbo (7MHz, 14MHz, 28MHz, 56MHz).</p>
+</li>
+<li>
+<p>Soporte para ULA+ v1.1 y con modo Timex extendido.</p>
+</li>
+<li>
+<p>Modos Timex HiColor, HiRes.</p>
+</li>
+<li>
+<p>Soporte para ficheros de cinta TAP con turbo (inyección directa de bytes) y carga normal.</p>
+</li>
+<li>
+<p>Soporte para formatos de cinta TZX y CSW con carga rápida (16x) y normal.</p>
+</li>
+<li>
+<p>Carga instantánea de ficheros Z80/SNA.</p>
+</li>
+<li>
+<p>TR-DOS (Beta Disk Interface) - imágenes TRD(lectura/escritura) y SCL(sólo lectura).</p>
+</li>
+<li>
+<p>G+DOS (MGT +D Disk Interface) - imágenes IMG, MGT (sólo en modos de memoria no +2A/+3).</p>
+</li>
+<li>
+<p>Unidad de disco +3 utilizable con +3DOS.</p>
+</li>
+<li>
+<p>DivMMC con esxdos.</p>
+</li>
+<li>
+<p>Multiface 128 y Multiface 3 (en modo +3).</p>
+</li>
+<li>
+<p>Guardado y carga de instantáneas de memoria en +D y Multiface.</p>
+</li>
+<li>
+<p>Ratón Kempston.</p>
+</li>
+<li>
+<p>Joysticks: Kempston, Sinclair I/II, Cursor.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_formato_de_tarjeta_microsd_66">Formato de Tarjeta microSD</h4>
+<div class="paragraph">
+<p>Se necesita un fichero <code>spectrum.rom</code> en la carpeta Mist, donde se encuentre el fichero <code>.bit</code> del core. Se puede descargar desde la web del proyecto original (<a href="https://github.com/mist-devel/mist-binaries/tree/master/cores/spectrum/spectrum.rom" class="bare">https://github.com/mist-devel/mist-binaries/tree/master/cores/spectrum/spectrum.rom</a>) o bien construir uniendo los siguientes (cada uno de los trozos ocupa exactamente 16KiB):</p>
+</div>
+<div class="paragraph">
+<p>Boot (GLUK) + TRDOS + 128 ROM0 + 128 ROM1 + +3 ROM0/1/2/3 + PlusD + MF128 + MF3 + 48K ROM + GS(low) + GS(high)</p>
+</div>
+<div class="paragraph">
+<p>Además es recomendable tener, en el lugar que se desee de la tarjeta, ficheros con imágenes de cinta o de disco según el sistema con el que se quiera jugar.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_teclado_68">Teclado</h4>
+<div class="paragraph">
+<p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
+</div>
+<div class="sect4">
+<h5 id="_teclas_especiales_y_botones_68">Teclas especiales y botones</h5>
+<div class="paragraph">
+<p>Durante la ejecución del core:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>F12</code>: Mostrar y ocultar el menú de ajustes del core</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_guía_básica_67">Guía básica</h4>
+<div class="paragraph">
+<p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/mist_zxspectrum.png" alt="mist zxspectrum"></span></p>
+</div>
+<div class="paragraph">
+<p>Estas son las principales:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Load Disk</code>: Para cargar desde la microSD un archivo de imagen de disco TRD, IMG, DSK o MGT</p>
+</li>
+<li>
+<p><code>Load Tape</code>: Para cargar desde la tarjeta un archivo de imagen de cinta TAP, CSW o TZX</p>
+</li>
+<li>
+<p><code>CPU frequency</code>: Selección de la velocidad de procesador (modos turbo)</p>
+</li>
+<li>
+<p><code>Video timings</code>: Configuración de temporazación de vídeo (según distintos modelos de ZX Spectrum)</p>
+</li>
+<li>
+<p><code>Memory</code>: Cantidad de memoria a asignar</p>
+</li>
+<li>
+<p><code>Joystick 1</code>:  Para asignar al mando número 1 (bien conectado al puerto o bien USB, según la configuración de Mist)</p>
+</li>
+<li>
+<p><code>Joystick 2</code>: Para asignar al mando número 1 (bien conectado al puerto o bien USB, según la configuración de Mist)</p>
+</li>
+<li>
+<p><code>Fast tape load</code>: Activar o desactivar la carga rápida de cinta</p>
+</li>
+<li>
+<p><code>Scandoubler fx</code>: Efectos a aplicar (sólo en la salida VGA)</p>
+</li>
+<li>
+<p><code>Features</code>: Para activar o desactivar ULA+ y/o Timex</p>
+</li>
+<li>
+<p><code>MMC Card</code>: Para activar la emulación de dispositivos de almacenamiento (divMMC, ZXMMC, etc.)</p>
+</li>
+<li>
+<p><code>General Sound</code>: Configuración de sonido General Sound</p>
+</li>
+<li>
+<p><code>Keyboard</code>: Tipo de issue de teclado a usar</p>
+</li>
+<li>
+<p><code>Snowing</code>: Activar o desactivar el efecto "nieve" de la ULA</p>
+</li>
+<li>
+<p><code>Reset</code>: Reiniciar el core</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_otro_hardware">Otro Hardware</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -14261,6 +14743,20 @@ CHROMA81: enabled</p>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
 <h4 id="_calibración_de_mandos_usb">Calibración de mandos USB</h4>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Este método de calibración sólo es aplicable para tarjetas intermedias que tengan un firmware previo al <a href="#_modo_mist">modo Mist</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Algunos mandos USB funcionan directamente tras conectarlos. Para los que no, es necesario eralizar un proceso de calibración</p>
 </div>
@@ -15966,7 +16462,7 @@ bcm2835gpio_jtag_nums 26 6 13 19</code></pre>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_spectrum">Spectrum</h3>
+<h3 id="_spectrum_2">Spectrum</h3>
 <div class="sect3">
 <h4 id="_scan_codes">Scan Codes</h4>
 <div class="paragraph text-center">
@@ -19566,7 +20062,7 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 <div id="footer">
 <div id="footer-text">
 Versión 1.0.0b<br>
-Última actualización 2024-02-05 12:18:45 +0100
+Última actualización 2024-04-20 11:49:40 +0200
 </div>
 </div>
 </body>
