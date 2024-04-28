@@ -740,8 +740,8 @@ pre.rouge {
 <h1>Manual de ZXTRES, ZXTRES+ y ZXTRES++</h1>
 <div class="details">
 <span id="author" class="author">ES</span><br>
-<span id="email" class="email">2024-04-20</span><br>
-<span id="revnumber">versión 1.0.0b</span>
+<span id="email" class="email">2024-04-28</span><br>
+<span id="revnumber">versión 1.0.1b</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Índice</div>
@@ -14625,6 +14625,7 @@ CHROMA81: enabled</p>
 <div class="paragraph">
 <p>Además es recomendable tener, en el lugar que se desee de la tarjeta, ficheros con imágenes de cinta o de disco según el sistema con el que se quiera jugar.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
 <h4 id="_teclado_68">Teclado</h4>
@@ -14639,10 +14640,38 @@ CHROMA81: enabled</p>
 <div class="ulist">
 <ul>
 <li>
+<p><code>F1</code>: Pausa/Reproducción del archivo de cinta cargado actualmente</p>
+</li>
+<li>
+<p><code>F5</code> (mantener pulsado): CPU a 7MHz</p>
+</li>
+<li>
+<p><code>F6</code> (mantener pulsado): CPU a 14MHz</p>
+</li>
+<li>
+<p><code>F7</code> (mantener pulsado): CPU a 28MHz</p>
+</li>
+<li>
+<p><code>F8</code> (mantener pulsado): CPU a 56MHz</p>
+</li>
+<li>
+<p><code>F9</code>: Pausa de la CPU o continuar</p>
+</li>
+<li>
+<p><code>F10</code>: NMI (Entrar en multiface)</p>
+</li>
+<li>
+<p><code>F11</code>: Reinicio del core (en caliente)</p>
+</li>
+<li>
+<p><code>Ctrl+F11</code>: Cambiar a modo BASIC 48K y ejecutar <code>LOAD ""</code></p>
+</li>
+<li>
 <p><code>F12</code>: Mostrar y ocultar el menú de ajustes del core</p>
 </li>
 </ul>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect3">
@@ -14829,7 +14858,7 @@ CHROMA81: enabled</p>
 <p><code>BIN/BPLUGINS/BIT</code> - Versión más reciente del <a href="#_navegador_de_bob_fossil_con_tarjeta_intermedia">plugin BIT</a> para esxdos</p>
 </li>
 <li>
-<p>p2s.uf2 - Actualización de firmware para middle board con sólo una CPU.</p>
+<p><code>&#8230;&#8203;uf2`</code> - Actualización de firmware para middle board con sólo una CPU.</p>
 </li>
 </ul>
 </div>
@@ -14928,23 +14957,24 @@ CHROMA81: enabled</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Obtener el archivo UF2 adecuado para el microcontrolador a recuperar:</p>
+<p>Obtener los archivos UF2 adecuados para el microcontrolador a recuperar, desde el <a href="https://github.com/ZXMicroJack/mist-firmware-rp2040/releases">repositorio del proyecto</a> (fichero con un nombre del tipo <code>debrick&#8230;&#8203;zip</code>):</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>rp2s.uf2</code> para tarjetas con un único microcontrolador</p>
+<p><code>common/ct2mgm8ba.uf2</code>, <code>common/ct8mgm.uf2</code>. <code>common/luttables2.uf2</code> y <code>zx3mb1/mistusbxilinx.uf2</code> para tarjetas con un único microcontrolador</p>
 </li>
 <li>
-<p><code>rp2m-bootstrap.uf2</code> para rp2040 MIDI (tarjetas con dos microcontroladores)</p>
+<p><code>zx3mb2/rp2usb/rp2u-bootstrap.uf2</code>, <code>zx3mb2/rp2usb/rp2u-signed.uf2</code> para rp2040 USB (tarjetas con dos microcontroladores)</p>
 </li>
 <li>
-<p><code>rp2u-bootstrap.uf2</code> para rp2040 USB (tarjetas con dos microcontroladores)</p>
+<p><code>common/ct2mgm8ba.uf2</code>, <code>common/ct8mgm.uf2</code>, <code>common/luttables2.uf2</code>, <code>zx3mb2/rp2midi/rp2m-bootstrap.uf2</code> y <code>zx3mb2/rp2midi/rp2m-signed.uf2</code> para rp2040 MIDI (tarjetas con dos microcontroladores)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+<div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p><strong>Pasos a seguir</strong>:</p>
 </div>
@@ -14964,13 +14994,65 @@ CHROMA81: enabled</p>
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
+<p>Repetir los tres pasos siguientes, para cada fichero, exactamente en el orden que se indica a continuación</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tarjeta 1 controlador</th>
+<th class="tableblock halign-left valign-top">Tarjeta 2 Controladores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>zx3mb2/rp2usb/rp2u-bootstrap.uf2</code> (USB)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>zx3mb2/rp2usb/rp2u-signed.uf2</code> (USB)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/ct2mgm8ba.uf2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/ct2mgm8ba.uf2</code> (MIDI)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/ct8mgm.uf2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/ct8mgm.uf2</code> (MIDI)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/luttables2.uf2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>common/luttables2.uf2</code> (MIDI)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>zx3mb1/mistusbxilinx.uf2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>zx3mb2/rp2midi/rp2m-bootstrap.uf2</code> (MIDI)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>zx3mb2/rp2midi/rp2m-signed.uf2</code> (MIDI)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Apagar el ZXTRES completamente. En el caso de tarjetas con dos microcontroladores, verificar que el interruptor esté en la posición adecuada</p>
+</li>
+<li>
 <p>Encender el ZXTRES mientras se pulsa el <a href="#_puertos_y_conectores">botón BOOTSEL</a> de la parte inferior de la carcasa</p>
 </li>
 <li>
-<p>Copiar el fichero UF2 correspondiente a la unidad de disco que aparecerá disponible en el ordenador</p>
+<p>Copiar el fichero UF2 correspondiente a la unidad de disco que aparecerá disponible en el ordenador. Una vez se haya grabado correctamente, la unidad desaparecerá de forma automática</p>
 </li>
 <li>
-<p>Finalmente, en el caso de tarjetas con dos microcontroladores, si fuera necesario, volver a poner el interruptor en la posición 1 (USB)</p>
+<p>Finalmente, en el caso de tarjetas con dos microcontroladores, si fuera necesario, dejar el interruptor en la posición 2 (MIDI)</p>
 </li>
 </ol>
 </div>
@@ -20061,8 +20143,8 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Versión 1.0.0b<br>
-Última actualización 2024-04-20 11:49:40 +0200
+Versión 1.0.1b<br>
+Última actualización 2024-04-28 16:31:01 +0200
 </div>
 </div>
 </body>
