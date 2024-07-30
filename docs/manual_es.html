@@ -740,8 +740,8 @@ pre.rouge {
 <h1>Manual de ZXTRES, ZXTRES+ y ZXTRES++</h1>
 <div class="details">
 <span id="author" class="author">ES</span><br>
-<span id="email" class="email">2024-07-29</span><br>
-<span id="revnumber">versión 1.1.0</span>
+<span id="email" class="email">2024-07-30</span><br>
+<span id="revnumber">versión 1.1.1</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Índice</div>
@@ -1571,7 +1571,7 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_zxtres">ZXTRES</a></li>
-<li><a href="#_sega_master_system">Sega Master System</a>
+<li><a href="#_nintendo_entertainment_system_nes">Nintendo Entertainment System (NES)</a>
 <ul class="sectlevel3">
 <li><a href="#_formato_de_tarjeta_microsd_65">Formato de Tarjeta microSD</a></li>
 <li><a href="#_teclado_66">Teclado</a>
@@ -1582,7 +1582,7 @@ pre.rouge {
 <li><a href="#_guía_básica_66">Guía básica</a></li>
 </ul>
 </li>
-<li><a href="#_sinclair_ql">Sinclair QL</a>
+<li><a href="#_sega_master_system">Sega Master System</a>
 <ul class="sectlevel3">
 <li><a href="#_formato_de_tarjeta_microsd_66">Formato de Tarjeta microSD</a></li>
 <li><a href="#_teclado_67">Teclado</a>
@@ -1593,7 +1593,7 @@ pre.rouge {
 <li><a href="#_guía_básica_67">Guía básica</a></li>
 </ul>
 </li>
-<li><a href="#_spectrum">Spectrum</a>
+<li><a href="#_sinclair_ql">Sinclair QL</a>
 <ul class="sectlevel3">
 <li><a href="#_formato_de_tarjeta_microsd_67">Formato de Tarjeta microSD</a></li>
 <li><a href="#_teclado_68">Teclado</a>
@@ -1604,7 +1604,7 @@ pre.rouge {
 <li><a href="#_guía_básica_68">Guía básica</a></li>
 </ul>
 </li>
-<li><a href="#_zx_spectrum">ZX Spectrum</a>
+<li><a href="#_spectrum">Spectrum</a>
 <ul class="sectlevel3">
 <li><a href="#_formato_de_tarjeta_microsd_68">Formato de Tarjeta microSD</a></li>
 <li><a href="#_teclado_69">Teclado</a>
@@ -1613,6 +1613,17 @@ pre.rouge {
 </ul>
 </li>
 <li><a href="#_guía_básica_69">Guía básica</a></li>
+</ul>
+</li>
+<li><a href="#_zx_spectrum">ZX Spectrum</a>
+<ul class="sectlevel3">
+<li><a href="#_formato_de_tarjeta_microsd_69">Formato de Tarjeta microSD</a></li>
+<li><a href="#_teclado_70">Teclado</a>
+<ul class="sectlevel4">
+<li><a href="#_teclas_especiales_y_botones_70">Teclas especiales y botones</a></li>
+</ul>
+</li>
+<li><a href="#_guía_básica_70">Guía básica</a></li>
 </ul>
 </li>
 </ul>
@@ -14617,7 +14628,156 @@ CHROMA81: enabled</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
+<h3 id="_nintendo_entertainment_system_nes">Nintendo Entertainment System (NES)</h3>
+<div class="paragraph">
+<p><a href="https://es.wikipedia.org/wiki/Nintendo_Entertainment_System">Nintendo Entertainment System</a> (también conocida como Nintendo NES o simplemente NES), conocida en Japón como Family Computer (o Famicom), fue la primera consola de sobremesa de Nintendo en emplear cartuchos, y lanzada entre 1985 y 1987.</p>
+</div>
+<div class="paragraph">
+<p>Este core es una adaptación del <a href="https://github.com/MiSTer-devel/NES_MiSTer">core original para MiSTer</a>.</p>
+</div>
+<div class="paragraph">
+<p>La versión adaptada tiene, entre otras, las siguientes características:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Carga de ROMs de cartucho y de imágenes de disco (FSD) desde microSD</p>
+</li>
+<li>
+<p>Soporte para mandos</p>
+</li>
+<li>
+<p>Compatible con la mayoría de juegos</p>
+</li>
+<li>
+<p>Compatible con los sistemas NTSC, PAL y Dendy</p>
+</li>
+<li>
+<p>Soporte de FDS</p>
+</li>
+<li>
+<p>Múltiples opciones de paleta</p>
+</li>
+<li>
+<p>Ajuste para aumentar por 8 los sprites por línea</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_formato_de_tarjeta_microsd_65">Formato de Tarjeta microSD</h4>
+<div class="paragraph">
+<p>Se pueden utilizar ficheros ROM de cartuchos de los sistemas soporteados o imágnenes de disco FSD, dejándolos normalmente dentro de un subdirectrio <code>NES</code> en el directorio <code>mist</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_teclado_66">Teclado</h4>
+<div class="paragraph">
+<p>El core es compatible con todos los teclados PS/2 o USB con los que, a su vez, sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
+</div>
+<div class="sect4">
+<h5 id="_teclas_especiales_y_botones_66">Teclas especiales y botones</h5>
+<div class="paragraph">
+<p>Durante la ejecución del core:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>F12`o la tecla `Menu de Windows</code>: Mostrar y ocultar el menú de ajustes del core</p>
+</li>
+<li>
+<p><code>Alt</code>: Botón Select</p>
+</li>
+<li>
+<p><code>Ctrl</code>: Botón Start</p>
+</li>
+<li>
+<p>Cursor o un mando conectado al puerto izquierdo: Controles de dirección del jugador 1</p>
+</li>
+<li>
+<p><code>Mayúsculas</code> o el botón <code>B</code> del mando 1: Botón A del jugador 1</p>
+</li>
+<li>
+<p><code>Espacio</code> o el botón <code>C</code> del mando 1: Botón B del jugador 1</p>
+</li>
+<li>
+<p>Mando conectado al puerto derecho: Controles de dirección del jugador 2</p>
+</li>
+<li>
+<p>Botón <code>B</code> del mando 2: Botón A del jugador 2</p>
+</li>
+<li>
+<p>Botón <code>C</code> del mando 2: Botón B del jugador 2</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_guía_básica_66">Guía básica</h4>
+<div class="paragraph">
+<p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
+</div>
+<div class="paragraph text-center">
+<p><span class="image"><img src="img/nes_zxtres.png" alt="nes zxtres"></span></p>
+</div>
+<div class="paragraph">
+<p>Estas son las principales:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Load *.NES, FDS, NSF</code>: Para cargar un fichero ROM o de imagen de disco</p>
+</li>
+<li>
+<p><code>Load FDS BIOS *.BIN</code>: Para cargar una BIOS de controladora de disco</p>
+</li>
+<li>
+<p><code>Mount RAM *.SAV</code>: Para cargar una foto previametne guardada de la RAM</p>
+</li>
+<li>
+<p><code>Write SRAM</code>: Para guardar una foto de la RAM</p>
+</li>
+<li>
+<p><code>System Type</code>: Para elegir el tipo de sistema entre NTSC y PAL</p>
+</li>
+<li>
+<p><code>Scanlines</code>: Para activar las líneas de exploración (sólo con salida VGA)</p>
+</li>
+<li>
+<p><code>Joystick Swap</code>: Para intercambiar los puertos de los mandos</p>
+</li>
+<li>
+<p><code>Invert Mirroring</code>:</p>
+</li>
+<li>
+<p><code>Hide Overscan</code>: Para ocultar las zonas de overscan de la pantalla</p>
+</li>
+<li>
+<p><code>Blend</code>: Para activar suavizado de la imagen</p>
+</li>
+<li>
+<p><code>Palette</code>: Para cambiar el tipo de paleta de color por otro alternativo</p>
+</li>
+<li>
+<p><code>Famicon Keyboard</code>:</p>
+</li>
+<li>
+<p><code>Disk Side</code>:</p>
+</li>
+<li>
+<p><code>Reset</code>: Para reiniciar el core.</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_sega_master_system">Sega Master System</h3>
+<div class="paragraph">
+<p>La <a href="https://es.wikipedia.org/wiki/Master_System">Master System</a> fue una consola de videojuegos doméstica de 8 bits fabricada y desarrollada por Sega.</p>
+</div>
 <div class="paragraph">
 <p>Este core es una adaptación del <a href="https://github.com/MiSTer-devel/SMS_MiSTer">core original para Mist</a>.</p>
 </div>
@@ -14656,25 +14816,34 @@ CHROMA81: enabled</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_formato_de_tarjeta_microsd_65">Formato de Tarjeta microSD</h4>
+<h4 id="_formato_de_tarjeta_microsd_66">Formato de Tarjeta microSD</h4>
 <div class="paragraph">
 <p>Se pueden utilizar ficheros ROM de cartuchos de los sistemas soporteados, dejándolos dentro del subdirectrio <code>SMS</code> en el directorio <code>mist</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_teclado_66">Teclado</h4>
+<h4 id="_teclado_67">Teclado</h4>
 <div class="paragraph">
 <p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
 </div>
 <div class="sect4">
-<h5 id="_teclas_especiales_y_botones_66">Teclas especiales y botones</h5>
+<h5 id="_teclas_especiales_y_botones_67">Teclas especiales y botones</h5>
 <div class="paragraph">
 <p>Durante la ejecución del core:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>F12</code>: Mostrar y ocultar el menú de ajustes del core</p>
+<p><code>F12`o la tecla `Menu de Windows</code>: Mostrar y ocultar el menú de ajustes del core</p>
+</li>
+<li>
+<p>Cursor o un mando conectado al puerto izquierdo: Controles de dirección</p>
+</li>
+<li>
+<p><code>Z</code> o el botón <code>B</code> del mando: Botón Start</p>
+</li>
+<li>
+<p><code>X</code> o el botón <code>C</code> del mando: Botón 2</p>
 </li>
 </ul>
 </div>
@@ -14682,7 +14851,7 @@ CHROMA81: enabled</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_guía_básica_66">Guía básica</h4>
+<h4 id="_guía_básica_67">Guía básica</h4>
 <div class="paragraph">
 <p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
 </div>
@@ -14745,18 +14914,18 @@ CHROMA81: enabled</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_formato_de_tarjeta_microsd_66">Formato de Tarjeta microSD</h4>
+<h4 id="_formato_de_tarjeta_microsd_67">Formato de Tarjeta microSD</h4>
 <div class="paragraph">
 <p>Se necesita, al menos, un fichero <code>ql.rom</code> con una ROM de Sinclair QL dentro del directorio <code>mist</code>. Además, se pueden utilizar ficheros de imágenes de Microdrive (ficheros <code>.mdv</code>) con formato QLAY, dejándolos dentro del subdirectrio <code>QL</code> en el directorio <code>mist</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_teclado_67">Teclado</h4>
+<h4 id="_teclado_68">Teclado</h4>
 <div class="paragraph">
 <p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
 </div>
 <div class="sect4">
-<h5 id="_teclas_especiales_y_botones_67">Teclas especiales y botones</h5>
+<h5 id="_teclas_especiales_y_botones_68">Teclas especiales y botones</h5>
 <div class="paragraph">
 <p>Durante la ejecución del core:</p>
 </div>
@@ -14770,7 +14939,7 @@ CHROMA81: enabled</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_guía_básica_67">Guía básica</h4>
+<h4 id="_guía_básica_68">Guía básica</h4>
 <div class="paragraph">
 <p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
 </div>
@@ -14817,18 +14986,18 @@ CHROMA81: enabled</p>
 <p>Este core es un ejemplo sencillo de core de Mist adaptado a ZXTRES.</p>
 </div>
 <div class="sect3">
-<h4 id="_formato_de_tarjeta_microsd_67">Formato de Tarjeta microSD</h4>
+<h4 id="_formato_de_tarjeta_microsd_68">Formato de Tarjeta microSD</h4>
 <div class="paragraph">
 <p>Este core no utiliza la microSD.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_teclado_68">Teclado</h4>
+<h4 id="_teclado_69">Teclado</h4>
 <div class="paragraph">
 <p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
 </div>
 <div class="sect4">
-<h5 id="_teclas_especiales_y_botones_68">Teclas especiales y botones</h5>
+<h5 id="_teclas_especiales_y_botones_69">Teclas especiales y botones</h5>
 <div class="paragraph">
 <p>Durante la ejecución del core:</p>
 </div>
@@ -14842,7 +15011,7 @@ CHROMA81: enabled</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_guía_básica_68">Guía básica</h4>
+<h4 id="_guía_básica_69">Guía básica</h4>
 <div class="paragraph">
 <p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
 </div>
@@ -14932,7 +15101,7 @@ CHROMA81: enabled</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_formato_de_tarjeta_microsd_68">Formato de Tarjeta microSD</h4>
+<h4 id="_formato_de_tarjeta_microsd_69">Formato de Tarjeta microSD</h4>
 <div class="paragraph">
 <p>Se necesita un fichero <code>spectrum.rom</code> en la carpeta Mist, donde se encuentre el fichero <code>.bit</code> del core. Se puede descargar desde la web del proyecto original (<a href="https://github.com/mist-devel/mist-binaries/tree/master/cores/spectrum/spectrum.rom" class="bare">https://github.com/mist-devel/mist-binaries/tree/master/cores/spectrum/spectrum.rom</a>) o bien construir uniendo los siguientes (cada uno de los trozos ocupa exactamente 16KiB):</p>
 </div>
@@ -14945,12 +15114,12 @@ CHROMA81: enabled</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
-<h4 id="_teclado_69">Teclado</h4>
+<h4 id="_teclado_70">Teclado</h4>
 <div class="paragraph">
 <p>El core es compatible con todos los teclados PS/2 o USB con los que sea compatible la versión instalada de firmware en la tarjeta intermedia.</p>
 </div>
 <div class="sect4">
-<h5 id="_teclas_especiales_y_botones_69">Teclas especiales y botones</h5>
+<h5 id="_teclas_especiales_y_botones_70">Teclas especiales y botones</h5>
 <div class="paragraph">
 <p>Durante la ejecución del core:</p>
 </div>
@@ -14992,7 +15161,7 @@ CHROMA81: enabled</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_guía_básica_69">Guía básica</h4>
+<h4 id="_guía_básica_70">Guía básica</h4>
 <div class="paragraph">
 <p>Al pulsar <code>F12</code>, se mostrará el menú con las distintas opciones del Core. Se puede navegar utilizando las teclas de cursor. <code>Enter</code> selecciona un elemento. <code>F12</code> oculta el menú si se estaba mostrando.</p>
 </div>
@@ -20460,8 +20629,8 @@ openFPGALoader <span class="nt">-c</span> ft232 recovery.bit</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Versión 1.1.0<br>
-Última actualización 2024-07-29 20:07:43 +0200
+Versión 1.1.1<br>
+Última actualización 2024-07-30 12:52:57 +0200
 </div>
 </div>
 </body>
